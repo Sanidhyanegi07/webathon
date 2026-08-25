@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  
+  ::selection { background: #FFCC00; color: #1A1A1A; }
+  ::-moz-selection { background: #FFCC00; color: #1A1A1A; }
+
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #F5F0E8; border-left: 1px solid #1A1A1A; }
+  ::-webkit-scrollbar-thumb { background: #1A1A1A; border-radius: 0; }
+  ::-webkit-scrollbar-thumb:hover { background: #FFCC00; }
+}
+
+@layer components {
+  .brutal-btn {
+    @apply inline-flex items-center gap-2 border-2 border-n-border bg-n-border text-n-cream font-headline font-bold uppercase tracking-widest text-sm px-6 py-3 transition-all duration-300;
+    box-shadow: 4px 4px 0px 0px rgba(26,26,26,1);
+  }
+  .brutal-btn:hover {
+    @apply bg-n-yellow border-n-yellow text-n-border;
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px 0px rgba(26,26,26,1);
+  }
+  .brutal-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px 0px rgba(26,26,26,0);
+  }
+
+  .brutal-btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-n-border text-n-border font-headline font-bold uppercase tracking-widest text-sm px-6 py-3 transition-all duration-300;
+    box-shadow: 4px 4px 0px 0px rgba(26,26,26,0.2);
+  }
+  .brutal-btn-outline:hover {
+    @apply bg-n-border text-n-cream;
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px 0px rgba(26,26,26,0.4);
+  }
+  .brutal-btn-outline:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+
+  .section-label {
+    @apply font-headline text-xs font-bold uppercase tracking-[0.3em] text-n-border border border-n-border px-3 py-1 bg-n-yellow/20 relative overflow-hidden;
+  }
+  
+  .section-label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 204, 0, 0.4), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  .card-brutal {
+    @apply bg-n-card border-2 border-n-border transition-all duration-300;
+  }
+  .card-brutal:hover {
+    border-color: #1A1A1A;
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px 0px #1A1A1A;
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #F5F0E8 25%, #E5E0D8 50%, #F5F0E8 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite;
+  }
+
+  .ticker-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex;
+    animation: ticker 30s linear infinite;
+  }
+  .ticker-inner:hover { animation-play-state: paused; }
+}
+
+@layer utilities {
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
