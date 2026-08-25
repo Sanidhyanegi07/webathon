@@ -50,7 +50,7 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
         className="absolute left-10 sm:left-16 top-16 sm:top-20 w-64 sm:w-80 opacity-70 hover:opacity-100 transition-opacity hidden md:block mix-blend-multiply z-20 cursor-pointer"
         aria-label="Back to top (GEHU)"
       >
-        <img src="/assets/gehu-logo.jpg" alt="GEHU Logo" className="w-full h-auto" />
+        <img src="assets/gehu-logo.jpg" alt="GEHU Logo" className="w-full h-auto" />
       </a>
       <a 
         href="#"
@@ -58,7 +58,7 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
         className="absolute right-10 sm:right-16 top-1/2 -translate-y-1/2 w-32 sm:w-40 opacity-70 hover:opacity-100 transition-opacity hidden md:block mix-blend-multiply z-20 cursor-pointer"
         aria-label="Back to top (Tech Geeks)"
       >
-        <img src="/assets/tech-geeks-logo.jpg" alt="Tech Geeks Logo" className="w-full h-auto" />
+        <img src="assets/tech-geeks-logo.jpg" alt="Tech Geeks Logo" className="w-full h-auto" />
       </a>
 
       {/* Main content */}
