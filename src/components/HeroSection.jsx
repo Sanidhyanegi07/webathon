@@ -49,18 +49,18 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
       <a 
         href="#"
         onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-        className="absolute left-10 sm:left-16 top-16 sm:top-20 w-64 sm:w-80 opacity-90 hover:opacity-100 transition-opacity duration-300 hidden md:block mix-blend-multiply z-20 cursor-pointer"
+        className="absolute left-10 sm:left-16 top-16 sm:top-20 w-64 sm:w-80 opacity-70 hover:opacity-100 transition-opacity duration-300 hidden md:block mix-blend-multiply z-20 cursor-pointer"
       >
-        <img src={`${import.meta.env.BASE_URL}assets/gehu-logo.jpg`} alt="GEHU Logo" className="w-full h-auto drop-shadow-2xl" />
+        <img src={`${import.meta.env.BASE_URL}assets/gehu-logo.jpg`} alt="GEHU Logo" className="w-full h-auto" />
       </a>
       
       {/* Tech Geeks Logo */}
       <a 
         href="#"
         onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-        className="absolute right-10 sm:right-16 top-16 sm:top-20 w-48 sm:w-56 opacity-90 hover:opacity-100 transition-opacity duration-300 hidden md:block mix-blend-multiply z-20 cursor-pointer"
+        className="absolute right-10 sm:right-16 top-16 sm:top-20 w-48 sm:w-56 opacity-70 hover:opacity-100 transition-opacity duration-300 hidden md:block mix-blend-multiply z-20 cursor-pointer"
       >
-        <img src={`${import.meta.env.BASE_URL}assets/tech-geeks-logo.jpg`} alt="Tech Geeks Logo" className="w-full h-auto drop-shadow-2xl" />
+        <img src={`${import.meta.env.BASE_URL}assets/tech-geeks-logo.jpg`} alt="Tech Geeks Logo" className="w-full h-auto" />
       </a>
 
       {/* Main content */}
