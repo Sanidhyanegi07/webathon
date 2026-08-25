@@ -44,22 +44,19 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
       <div className="absolute left-10 top-1/3 w-32 h-32 border-4 border-n-border opacity-20 hidden md:block"></div>
       <div className="absolute right-20 bottom-1/4 w-48 h-48 rounded-full border-4 border-n-yellow opacity-40 hidden lg:block"></div>
       <div className="absolute left-1/4 top-32 w-16 h-16 bg-n-yellow opacity-80 hidden md:block" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
-      <a 
-        href="#"
-        onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-        className="absolute left-10 sm:left-16 top-16 sm:top-20 w-64 sm:w-80 opacity-70 hover:opacity-100 transition-opacity hidden md:block mix-blend-multiply z-20 cursor-pointer"
-        aria-label="Back to top (GEHU)"
-      >
-        <img src="/assets/gehu-logo.jpg" alt="GEHU Logo" className="w-full h-auto" />
-      </a>
-      <a 
-        href="#"
-        onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-        className="absolute right-10 sm:right-16 top-1/2 -translate-y-1/2 w-32 sm:w-40 opacity-70 hover:opacity-100 transition-opacity hidden md:block mix-blend-multiply z-20 cursor-pointer"
-        aria-label="Back to top (Tech Geeks)"
-      >
-        <img src="/assets/tech-geeks-logo.jpg" alt="Tech Geeks Logo" className="w-full h-auto" />
-      </a>
+      
+      {/* Logos overlay */}
+      <div className="absolute top-8 left-8 w-24 md:w-32 z-20">
+        <img src={`${import.meta.env.BASE_URL}assets/gehu-logo.jpg`} alt="GEHU Logo" className="w-full h-auto" />
+      </div>
+      
+      {/* Right side logos */}
+      <div className="absolute top-8 right-8 z-20 flex items-center gap-4">
+        {/* Tech Geeks Logo */}
+        <div className="w-20 md:w-28 opacity-90 hover:opacity-100 transition-opacity mix-blend-screen">
+          <img src={`${import.meta.env.BASE_URL}assets/tech-geeks-logo.jpg`} alt="Tech Geeks Logo" className="w-full h-auto" />
+        </div>
+      </div>
 
       {/* Main content */}
       <div className="relative flex-grow flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">

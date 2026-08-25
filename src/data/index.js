@@ -220,9 +220,9 @@ export const SPEAKERS = [
 
 
 export const GALLERY_PHOTOS = [
-  { id: 'g1', src: '/assets/gallery/photo1.jpg', caption: 'Student playing a mobile battle royale game', category: 'E-Sports' },
-  { id: 'g2', src: '/assets/gallery/photo2.jpg', caption: 'Team of three discussing strategy in front of a laptop', category: 'Hackathon' },
-  { id: 'g3', src: '/assets/gallery/photo3.jpg', caption: 'Smartphone with earphones ready for a mobile gaming match', category: 'E-Sports' },
-  { id: 'g4', src: '/assets/gallery/photo4.jpg', caption: 'Instructor interacting with students working on laptops', category: 'Workshop' },
-  { id: 'g5', src: '/assets/gallery/photo5.jpg', caption: 'Group of students closely watching a gaming session on a laptop', category: 'E-Sports' },
+  { id: 'g1', src: `${import.meta.env.BASE_URL}assets/gallery/photo1.jpg`, caption: 'Student playing a mobile battle royale game', category: 'E-Sports' },
+  { id: 'g2', src: `${import.meta.env.BASE_URL}assets/gallery/photo2.jpg`, caption: 'Team of three discussing strategy in front of a laptop', category: 'Hackathon' },
+  { id: 'g3', src: `${import.meta.env.BASE_URL}assets/gallery/photo3.jpg`, caption: 'Smartphone with earphones ready for a mobile gaming match', category: 'E-Sports' },
+  { id: 'g4', src: `${import.meta.env.BASE_URL}assets/gallery/photo4.jpg`, caption: 'Instructor interacting with students working on laptops', category: 'Workshop' },
+  { id: 'g5', src: `${import.meta.env.BASE_URL}assets/gallery/photo5.jpg`, caption: 'Group of students closely watching a gaming session on a laptop', category: 'E-Sports' },
 ];
