@@ -66,19 +66,19 @@ function EventCard({ event, onSelect }) {
         {/* Details grid */}
         <div className="grid grid-cols-2 gap-3 mb-6 text-xs font-headline uppercase tracking-wide text-n-muted">
           <div className="flex items-center gap-2 group-hover:text-n-border transition-colors">
-            <Calendar className="w-4 h-4 text-n-yellow shrink-0 group-hover:scale-110 transition-transform" />
+            <Calendar className="w-4 h-4 text-n-yellow shrink-0 group-hover:scale-110 transition-transform" aria-hidden="true" />
             <span>{event.date.split(',')[0]}</span>
           </div>
           <div className="flex items-center gap-2 group-hover:text-n-border transition-colors">
-            <Users className="w-4 h-4 text-n-yellow shrink-0 group-hover:scale-110 transition-transform" />
+            <Users className="w-4 h-4 text-n-yellow shrink-0 group-hover:scale-110 transition-transform" aria-hidden="true" />
             <span>{event.teamSize}</span>
           </div>
           <div className="flex items-center gap-2 group-hover:text-n-border transition-colors">
-            <MapPin className="w-4 h-4 text-n-yellow shrink-0 group-hover:scale-110 transition-transform" />
+            <MapPin className="w-4 h-4 text-n-yellow shrink-0 group-hover:scale-110 transition-transform" aria-hidden="true" />
             <span className="truncate">{event.venue.split(',')[0]}</span>
           </div>
           <div className="flex items-center gap-2 group-hover:text-n-border transition-colors">
-            <Trophy className="w-4 h-4 text-n-yellow shrink-0 group-hover:scale-110 transition-transform" />
+            <Trophy className="w-4 h-4 text-n-yellow shrink-0 group-hover:scale-110 transition-transform" aria-hidden="true" />
             <span className="text-n-yellow font-black group-hover:text-n-border transition-colors">{event.prize.split(' ').slice(0, 2).join(' ')}</span>
           </div>
         </div>
@@ -90,7 +90,7 @@ function EventCard({ event, onSelect }) {
             onClick={(e) => { e.stopPropagation(); onSelect(event); }}
           >
             Explore Event
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -125,7 +125,7 @@ export default function EventsSection({ onRegisterClick }) {
 
           {/* Search */}
           <div className="relative w-full md:w-72">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-n-muted" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-n-muted" aria-hidden="true" />
             <input
               type="text"
               placeholder="Search events..."
@@ -275,7 +275,7 @@ function EventDetailModal({ event, onClose, onRegister }) {
 
           <button onClick={onRegister} className="brutal-btn w-full justify-center">
             Register for {event.title}
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </button>
         </div>
       </div>

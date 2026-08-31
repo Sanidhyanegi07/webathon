@@ -41,9 +41,9 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
       </div>
 
       {/* Geometric Bauhaus Elements & Logos */}
-      <div className="absolute left-10 top-1/3 w-32 h-32 border-4 border-n-border opacity-20 hidden md:block"></div>
-      <div className="absolute right-20 bottom-1/4 w-48 h-48 rounded-full border-4 border-n-yellow opacity-40 hidden lg:block"></div>
-      <div className="absolute left-1/4 top-32 w-16 h-16 bg-n-yellow opacity-80 hidden md:block" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
+      <div className="absolute left-10 top-1/3 w-32 h-32 border-4 border-n-border opacity-20 hidden md:block" aria-hidden="true"></div>
+      <div className="absolute right-20 bottom-1/4 w-48 h-48 rounded-full border-4 border-n-yellow opacity-40 hidden lg:block" aria-hidden="true"></div>
+      <div className="absolute left-1/4 top-32 w-16 h-16 bg-n-yellow opacity-80 hidden md:block" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} aria-hidden="true"></div>
       
       {/* GEHU Logo */}
       <a 
@@ -69,7 +69,7 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
         <div className="flex items-center gap-4 mb-8">
           <span className="section-label">Annual Tech Fest</span>
           <div className="flex items-center gap-1.5 text-n-muted text-xs font-headline uppercase tracking-widest">
-            <MapPin className="w-3 h-3" />
+            <MapPin className="w-3 h-3" aria-hidden="true" />
             <span>Graphic Era Hill University</span>
           </div>
         </div>
@@ -89,13 +89,13 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
         <div className="flex flex-wrap items-center gap-4 mb-14">
           <button onClick={onExploreClick} className="brutal-btn group flex items-center gap-2 hover:-translate-y-1 hover:shadow-brutal-lg transition-all duration-300">
             Explore Events
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </button>
           <button onClick={onRegisterClick} className="brutal-btn-outline hover:-translate-y-1 transition-all duration-300">
             Register Now
           </button>
           <div className="flex items-center gap-2 text-n-muted-lt text-sm font-headline uppercase tracking-widest ml-2">
-            <Calendar className="w-4 h-4 text-n-border" />
+            <Calendar className="w-4 h-4 text-n-border" aria-hidden="true" />
             <span>Oct 24–27, 2026</span>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
 
       {/* Scroll hint */}
       <div className="relative flex justify-center pb-8 animate-bounce">
-        <ChevronDown className="w-6 h-6 text-n-yellow opacity-60" />
+        <ChevronDown className="w-6 h-6 text-n-yellow opacity-60" aria-hidden="true" />
       </div>
 
       {/* Ticker strip */}

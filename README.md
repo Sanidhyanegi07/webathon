@@ -14,7 +14,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Firebase](https://img.shields.io/badge/Firebase-10.7-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://weabtho-nirvan.vercel.app)
+[![GitHub Pages](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://webathon-nirvan.vercel.app)
 
 <br />
 
@@ -23,7 +23,7 @@ Built with a bold **Brutalist / Bauhaus design language** that stands out from e
 
 <br />
 
-[🌐 **Live Demo**](https://weabtho-nirvan.vercel.app) · [📋 **Report Bug**](https://github.com/sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/sanidhyanegi07/webathon/issues) · [🤝 **Sponsor Us**](#-sponsorship--partnership)
+[🌐 **Live Demo**](https://webathon-nirvan.vercel.app) · [📋 **Report Bug**](https://github.com/sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/sanidhyanegi07/webathon/issues) · [🤝 **Sponsor Us**](#-sponsorship--partnership)
 
 ---
 
@@ -43,7 +43,7 @@ Built with a bold **Brutalist / Bauhaus design language** that stands out from e
 |:---:|:---:|:---:|
 | Multi-day, track-filtered timeline with venue info | Expandable speaker profile cards with bios | Firebase-powered multi-step registration with confetti 🎉 |
 
-> **👆 See it live →** [weabtho-nirvan.vercel.app](https://weabtho-nirvan.vercel.app)
+> **👆 See it live →** [webathon-nirvan.vercel.app](https://webathon-nirvan.vercel.app)
 
 </div>
 
@@ -347,7 +347,7 @@ NIRVAN '26 offers structured sponsorship tiers designed for maximum brand visibi
 | 🟣 **Enterprise** | ₹1,00,000 | Merchandise branding, speaking slot, premium booth, custom challenge creation |
 | 🟡 **Presenting Partner** | ₹2,50,000+ | **"Presented by"** title branding, keynote stage time (20 min), judge panel, VIP access, exclusive branding rights |
 
-> **Interested in partnering?** Reach out via the [Contact section](https://weabtho-nirvan.vercel.app#contact) on the website or email the organizing team directly.
+> **Interested in partnering?** Reach out via the [Contact section](https://webathon-nirvan.vercel.app#contact) on the website or email the organizing team directly.
 
 <br />
 
