@@ -11,7 +11,7 @@ export default function AboutSection() {
             </h2>
             <div className="space-y-5 font-body text-n-muted-lt leading-relaxed">
               <p>
-                <strong className="text-n-border font-black">NIRVAN '26</strong> is the annual technical festival of Graphic Era Hill University, Dehradun — a two-day celebration of engineering, creativity, and competitive spirit.
+                <strong className="text-n-border font-black">NIRVAN '26</strong> is the annual technical festival of Graphic Era Hill University, Bhimtal — a two-day celebration of engineering, creativity, and competitive spirit.
               </p>
               <p>
                 From 24-hour hackathons to high-stakes CTF competitions, campus-wide treasure hunts to intense e-sports battles — NIRVAN is where future technologists compete, collaborate, and grow.

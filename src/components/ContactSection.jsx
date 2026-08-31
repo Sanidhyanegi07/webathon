@@ -25,7 +25,7 @@ export default function ContactSection() {
                   <p className="font-body text-n-border text-sm leading-relaxed font-medium">
                     Graphic Era Hill University<br />
                     Bell Road, Clement Town<br />
-                    Dehradun, Uttarakhand — 248002
+                    Bhimtal, Uttarakhand — 263136
                   </p>
                 </div>
               </div>

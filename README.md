@@ -14,16 +14,16 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Firebase](https://img.shields.io/badge/Firebase-10.7-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://webathon.vercel.app)
+[![GitHub Pages](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://weabtho-nirvan.vercel.app)
 
 <br />
 
-**The official website for NIRVAN '26 — the flagship annual technical festival of [Graphic Era Hill University](https://www.gehu.ac.in/), Dehradun.**
+**The official website for NIRVAN '26 — the flagship annual technical festival of [Graphic Era Hill University](https://www.gehu.ac.in/), Bhimtal.**
 Built with a bold **Brutalist / Bauhaus design language** that stands out from every other college fest website.
 
 <br />
 
-[🌐 **Live Demo**](https://webathon.vercel.app) · [📋 **Report Bug**](https://github.com/sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/sanidhyanegi07/webathon/issues) · [🤝 **Sponsor Us**](#-sponsorship--partnership)
+[🌐 **Live Demo**](https://weabtho-nirvan.vercel.app) · [📋 **Report Bug**](https://github.com/sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/sanidhyanegi07/webathon/issues) · [🤝 **Sponsor Us**](#-sponsorship--partnership)
 
 ---
 
@@ -43,7 +43,7 @@ Built with a bold **Brutalist / Bauhaus design language** that stands out from e
 |:---:|:---:|:---:|
 | Multi-day, track-filtered timeline with venue info | Expandable speaker profile cards with bios | Firebase-powered multi-step registration with confetti 🎉 |
 
-> **👆 See it live →** [webathon.vercel.app](https://webathon.vercel.app)
+> **👆 See it live →** [weabtho-nirvan.vercel.app](https://weabtho-nirvan.vercel.app)
 
 </div>
 
@@ -53,7 +53,7 @@ Built with a bold **Brutalist / Bauhaus design language** that stands out from e
 
 ## 🎯 About the Project
 
-**NIRVAN '26** is a 4-day, campus-wide technical festival at Graphic Era Hill University (GEHU), Dehradun — bringing together **500+ participants**, **₹1.75 Lakh+ in prizes**, and **5 flagship events** under one roof.
+**NIRVAN '26** is a 4-day, campus-wide technical festival at Graphic Era Hill University (GEHU), Bhimtal — bringing together **500+ participants**, **₹1.75 Lakh+ in prizes**, and **5 flagship events** under one roof.
 
 This repository houses the **official event website** — designed to serve as the single source of truth for event information, schedules, speaker profiles, sponsorship tiers, and live registrations. Every pixel is crafted with intention using a custom **brutalist design system** that commands attention.
 
@@ -347,7 +347,7 @@ NIRVAN '26 offers structured sponsorship tiers designed for maximum brand visibi
 | 🟣 **Enterprise** | ₹1,00,000 | Merchandise branding, speaking slot, premium booth, custom challenge creation |
 | 🟡 **Presenting Partner** | ₹2,50,000+ | **"Presented by"** title branding, keynote stage time (20 min), judge panel, VIP access, exclusive branding rights |
 
-> **Interested in partnering?** Reach out via the [Contact section](https://webathon.vercel.app#contact) on the website or email the organizing team directly.
+> **Interested in partnering?** Reach out via the [Contact section](https://weabtho-nirvan.vercel.app#contact) on the website or email the organizing team directly.
 
 <br />
 
@@ -422,7 +422,7 @@ git push origin feature/amazing-feature
 | **Rudraksh** | 💻 Developer |
 | **Shobhit** | 💻 Developer |
 
-*Students of Graphic Era Hill University, Dehradun*
+*Students of Graphic Era Hill University, Bhimtal*
 
 </div>
 

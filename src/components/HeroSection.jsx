@@ -8,7 +8,7 @@ const TICKER_ITEMS = [
   '🎮 E-SPORTS ARENA — ₹40,000 Prize',
   '🚩 CAPTURE THE FLAG — October 25',
   '🛠️ WORKSHOP SERIES — All Days',
-  '📍 GRAPHIC ERA HILL UNIVERSITY, DEHRADUN',
+  '📍 GRAPHIC ERA HILL UNIVERSITY, BHIMTAL',
 ];
 
 export default function HeroSection({ onRegisterClick, onExploreClick }) {
@@ -82,7 +82,7 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
 
         <p className="font-body text-n-muted-lt text-lg max-w-xl mb-10 leading-relaxed">
           Four days. Five events. One campus-wide showdown.
-          Hackathons, CTF, E-Sports, Workshops — all under one roof at GEHU, Dehradun.
+          Hackathons, CTF, E-Sports, Workshops — all under one roof at GEHU, Bhimtal.
         </p>
 
         {/* Date badge + CTAs */}

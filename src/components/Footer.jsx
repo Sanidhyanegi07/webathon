@@ -18,7 +18,7 @@ export default function Footer() {
             <p className="font-body text-xs text-n-muted leading-relaxed">
               Annual Technical Festival<br />
               Graphic Era Hill University<br />
-              Dehradun, Uttarakhand
+              Bhimtal, Uttarakhand
             </p>
           </div>
 
