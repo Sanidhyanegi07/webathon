@@ -8,13 +8,14 @@
   ::selection { background: #FFCC00; color: #1A1A1A; }
   ::-moz-selection { background: #FFCC00; color: #1A1A1A; }
 
-  ::-webkit-scrollbar { width: 12px; height: 12px; }
-  ::-webkit-scrollbar-track { background: #1A1A1A; border-left: 2px solid #2A2A2A; }
-  ::-webkit-scrollbar-thumb { background: #FFCC00; border: 2px solid #1A1A1A; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #1A1A1A; }
+  ::-webkit-scrollbar-thumb { background: #FFCC00; border-radius: 0; }
   ::-webkit-scrollbar-thumb:hover { background: #E5B800; }
 }
 
 @layer components {
+  /* ── Buttons ── */
   .brutal-btn {
     @apply inline-flex items-center gap-2 border-2 border-n-border bg-n-border text-n-cream font-headline font-bold uppercase tracking-widest text-sm px-6 py-3 transition-all duration-300;
     box-shadow: 4px 4px 0px 0px rgba(26,26,26,1);
@@ -43,21 +44,20 @@
     box-shadow: none;
   }
 
+  /* ── Section label ── */
   .section-label {
     @apply font-headline text-xs font-bold uppercase tracking-[0.3em] text-n-border border border-n-border px-3 py-1 bg-n-yellow/20 relative overflow-hidden;
   }
-  
   .section-label::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 204, 0, 0.4), transparent);
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,204,0,0.4), transparent);
     animation: shimmer 3s infinite;
   }
 
+  /* ── Cards ── */
   .card-brutal {
     @apply bg-n-card border-2 border-n-border transition-all duration-300;
   }
@@ -67,24 +67,122 @@
     box-shadow: 8px 8px 0px 0px #1A1A1A;
   }
 
+  /* ── Skeleton ── */
   .skeleton {
     background: linear-gradient(90deg, #F5F0E8 25%, #E5E0D8 50%, #F5F0E8 75%);
     background-size: 200% 100%;
     animation: shimmer 1.8s infinite;
   }
 
-  .ticker-wrap {
-    overflow: hidden;
-    white-space: nowrap;
-  }
+  /* ── Ticker ── */
+  .ticker-wrap { overflow: hidden; white-space: nowrap; }
   .ticker-inner {
     display: inline-flex;
     animation: ticker 30s linear infinite;
   }
   .ticker-inner:hover { animation-play-state: paused; }
+
+  /* ── Scroll-reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ── Shimmer border (for sponsor card) ── */
+  .shimmer-border {
+    position: relative;
+  }
+  .shimmer-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, #FFCC00, #fff700, #ff9900, #FFCC00);
+    background-size: 300% 100%;
+    animation: shimmer-border-anim 2.5s linear infinite;
+    z-index: -1;
+    border-radius: 0;
+  }
+  @keyframes shimmer-border-anim {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
+
+  /* ── Glow effects ── */
+  .glow-yellow {
+    box-shadow: 0 0 24px 4px rgba(255, 204, 0, 0.35);
+  }
+  .glow-blue {
+    box-shadow: 0 0 24px 4px rgba(0, 85, 255, 0.25);
+  }
 }
 
 @layer utilities {
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+  /* Tilt card preserve */
+  .tilt-card { transform-style: preserve-3d; will-change: transform; }
+}
+
+/* ── Keyframes ── */
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-12px) rotate(1deg); }
+  66%       { transform: translateY(-6px) rotate(-1deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(255,204,0,0.3); }
+  50%       { box-shadow: 0 0 24px 8px rgba(255,204,0,0.6); }
+}
+@keyframes scroll-progress-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes flip-in {
+  0%   { transform: rotateX(-90deg); opacity: 0; }
+  60%  { transform: rotateX(10deg); }
+  100% { transform: rotateX(0deg); opacity: 1; }
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SCHEDULE } from '../data/index';
 import { cn } from '../lib/utils';
+import { useInView } from '../hooks/useInView';
 
 const TRACKS = ['All', 'General', 'Coding', 'Adventure', 'Gaming', 'Security', 'Learning'];
 
@@ -25,6 +26,7 @@ const TRACK_DOT = {
 export default function ScheduleSection() {
   const [activeDay, setActiveDay] = useState(1);
   const [activeTrack, setActiveTrack] = useState('All');
+  const { ref, inView } = useInView({ threshold: 0.15 });
 
   const now = new Date();
   const getFestDate = (day) => {
@@ -52,7 +54,13 @@ export default function ScheduleSection() {
     <section id="schedule" className="py-24 bg-n-surface border-t border-n-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12 pb-8 border-b border-n-border">
+        <div
+          ref={ref}
+          className={cn(
+            'mb-12 pb-8 border-b border-n-border transition-all duration-700',
+            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          )}
+        >
           <span className="section-label mb-4 inline-block">Oct 24–27</span>
           <h2 className="font-headline font-black text-5xl md:text-7xl uppercase text-n-border leading-none">
             Master <span className="text-n-yellow">Schedule</span>

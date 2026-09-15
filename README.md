@@ -62,17 +62,19 @@ This repository houses the **official event website** — designed to serve as t
 | Feature | Description |
 |:---|:---|
 | 🎨 **Custom Brutalist Design System** | Hand-built component library (`brutal-btn`, `card-brutal`, `section-label`) — zero generic templates used |
-| ⚡ **Real-Time Countdown** | Live countdown timer with animated hover states, tabular number formatting, and shadow transforms |
+| 🪟 **Interactive 3D Tilt Cards** | Dynamic `perspective` and mouse-coordinate 3D tilt with real-time specular glare on event cards |
+| 🌊 **Scroll-Triggered Reveals** | Custom `useInView` hook utilizing `IntersectionObserver` for staggered fade & slide entrances |
+| 📊 **Animated Stat Counters** | Custom `useCountUp` hook easing from 0 to 500+ with cubic bezier curves on viewport entry |
+| ⚡ **Real-Time Countdown & Parallax** | Live countdown timer + mouse-tracking parallax on hero typography & Bauhaus geometric shapes |
 | 🎫 **Firebase Registration** | Full Google Auth + multi-step event registration with Firestore backend & localStorage fallback |
 | 🔎 **Smart Event Discovery** | Category filters + full-text search across 5 flagship events with detailed modals |
 | 📱 **Fully Responsive** | Optimized for all devices — mobile-first layout with progressive enhancement |
-| 🎭 **Micro-Animations** | Hover transforms, shimmer effects, scroll-triggered reveals, animated ticker strip, confetti on registration |
-| 🏢 **4-Tier Sponsorship Portal** | Interactive pricing cards with hover lifts, scaling effects, and clear CTA hierarchy |
-| 🖼️ **Photo Gallery** | Category-filterable gallery with lightbox modal and smooth transitions |
-| 🗓️ **Multi-Day Schedule** | Day-by-day, track-filtered schedule viewer with venue information |
-| 🎙️ **Speaker Profiles** | Expandable speaker cards with bios, org affiliations, and color-coded avatars |
-| 📬 **Contact & Newsletter** | Brutalist-styled contact section with newsletter signup |
-| 🎟️ **Ticket Generation** | Auto-generated unique ticket IDs (e.g., `N26-X7K2P9`) on successful registration |
+| 🏢 **Sponsorship Portal & Marquee** | Infinite animated sponsor marquee strip + 4-tier pricing grid with animated shimmer border |
+| 🖼️ **Photo Gallery & Lightbox** | Category-filterable archive gallery with keyboard-navigable (`Esc`, `←`, `→`) lightbox modal |
+| 🗓️ **Multi-Day Schedule** | Day-by-day, track-filtered schedule viewer with live event status detection |
+| 🎙️ **Speaker Profiles** | Expandable speaker cards with gradient avatar rings, abstract drawers, and topic badges |
+| 🎟️ **Ticket Generation** | Auto-generated unique ticket IDs (e.g., `N26-X7K2P9`) with celebratory canvas confetti |
+| 📏 **Scroll Progress Indicator** | Fixed header progress indicator measuring reading depth across the landing page |
 
 <br />
 
@@ -218,6 +220,8 @@ Web-a-thon/
     │   └── index.js              # All event, schedule, speaker & gallery data
     │
     ├── 📁 hooks/
+    │   ├── useCountUp.js         # Animated counter hook with cubic easing
+    │   ├── useInView.js          # IntersectionObserver hook for scroll reveals
     │   └── useRegistration.js    # Custom hook — Firestore writes + localStorage fallback
     │
     └── 📁 lib/
