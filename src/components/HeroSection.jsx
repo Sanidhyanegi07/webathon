@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowRight, MapPin, Calendar, ChevronDown } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Sparkles, Trophy, Users, ChevronDown } from 'lucide-react';
 import { formatCountdown } from '../lib/utils';
 
 const TICKER_ITEMS = [
@@ -22,22 +22,19 @@ function CountdownUnit({ value, label }) {
       const t = setTimeout(() => {
         setDisplayed(value);
         setFlipping(false);
-      }, 200);
+      }, 180);
       prevValue.current = value;
       return () => clearTimeout(t);
     }
   }, [value]);
 
   return (
-    <div className="flex flex-col items-center group cursor-default">
+    <div className="flex flex-col items-center flex-1 min-w-0">
       <div
-        className="bg-n-card border-2 border-n-border w-16 h-16 flex items-center justify-center font-headline font-black text-2xl text-n-border tabular-nums shadow-brutal transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-n-yellow group-hover:shadow-brutal-lg overflow-hidden"
-        style={{
-          perspective: '200px',
-        }}
+        className="bg-n-bg border-2 border-n-border w-full aspect-square max-w-[72px] flex items-center justify-center font-headline font-black text-xl sm:text-2xl md:text-3xl text-n-border tabular-nums shadow-[3px_3px_0px_0px_rgba(26,26,26,1)] hover:-translate-y-1 hover:bg-n-yellow transition-all duration-200 overflow-hidden"
       >
         <span
-          className="block transition-all duration-200"
+          className="block transition-all duration-200 leading-none"
           style={{
             transform: flipping ? 'rotateX(-90deg)' : 'rotateX(0deg)',
             opacity: flipping ? 0 : 1,
@@ -46,7 +43,7 @@ function CountdownUnit({ value, label }) {
           {String(displayed).padStart(2, '0')}
         </span>
       </div>
-      <span className="text-[10px] font-headline uppercase tracking-widest text-n-muted mt-2 group-hover:text-n-border transition-colors">
+      <span className="text-[10px] sm:text-xs font-headline font-bold uppercase tracking-wider text-n-muted mt-2 text-center truncate">
         {label}
       </span>
     </div>
@@ -54,12 +51,10 @@ function CountdownUnit({ value, label }) {
 }
 
 export default function HeroSection({ onRegisterClick, onExploreClick }) {
-  const [time, setTime]       = useState(formatCountdown('2026-10-24T10:00:00'));
-  const [mouse, setMouse]     = useState({ x: 0, y: 0 });
-  const [loaded, setLoaded]   = useState(false);
-  const heroRef               = useRef(null);
+  const [time, setTime] = useState(formatCountdown('2026-10-24T10:00:00'));
+  const [loaded, setLoaded] = useState(false);
 
-  // Countdown
+  // Countdown timer interval
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(formatCountdown('2026-10-24T10:00:00'));
@@ -67,210 +62,201 @@ export default function HeroSection({ onRegisterClick, onExploreClick }) {
     return () => clearInterval(interval);
   }, []);
 
-  // Entrance animation
+  // Entrance animation trigger
   useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 100);
+    const t = setTimeout(() => setLoaded(true), 80);
     return () => clearTimeout(t);
-  }, []);
-
-  // Mouse parallax
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const { innerWidth, innerHeight } = window;
-      setMouse({
-        x: (e.clientX / innerWidth  - 0.5) * 2,  // -1 to 1
-        y: (e.clientY / innerHeight - 0.5) * 2,
-      });
-    };
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const tickerText = TICKER_ITEMS.join('  ·  ') + '  ·  ' + TICKER_ITEMS.join('  ·  ') + '  ·  ';
 
   return (
-    <section
-      ref={heroRef}
-      className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-n-bg"
-    >
+    <section className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden bg-n-bg pt-20 sm:pt-24">
       {/* Background grid */}
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
         style={{
           backgroundImage:
             'linear-gradient(#1A1A1A 1px, transparent 1px), linear-gradient(90deg, #1A1A1A 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
-          transform: `translate(${mouse.x * 6}px, ${mouse.y * 6}px)`,
-          transition: 'transform 0.1s linear',
+          backgroundSize: '48px 48px',
         }}
       />
 
-      {/* Large decorative "NIRVAN" — parallax */}
+      {/* Subtle background typography watermark */}
       <div
-        className="absolute top-24 right-0 font-headline font-black text-[160px] md:text-[260px] leading-none text-n-border/[0.04] select-none pointer-events-none overflow-hidden"
-        style={{
-          transform: `translate(${mouse.x * -18}px, ${mouse.y * -10}px)`,
-          transition: 'transform 0.12s linear',
-        }}
+        className="absolute top-1/2 right-[-5%] -translate-y-1/2 font-headline font-black text-[120px] sm:text-[200px] md:text-[280px] leading-none text-n-border/[0.02] select-none pointer-events-none hidden sm:block overflow-hidden"
       >
         NIRVAN
       </div>
 
-      {/* Geometric Bauhaus Elements — parallax layers */}
-      <div
-        className="absolute left-10 top-1/3 w-32 h-32 border-4 border-n-border opacity-20 hidden md:block"
-        aria-hidden="true"
-        style={{
-          transform: `translate(${mouse.x * 12}px, ${mouse.y * 8}px)`,
-          transition: 'transform 0.15s linear',
-          animation: 'float 6s ease-in-out infinite',
-        }}
-      />
-      <div
-        className="absolute right-20 bottom-1/4 w-48 h-48 rounded-full border-4 border-n-yellow opacity-40 hidden lg:block"
-        aria-hidden="true"
-        style={{
-          transform: `translate(${mouse.x * -14}px, ${mouse.y * 10}px)`,
-          transition: 'transform 0.18s linear',
-          animation: 'float 8s ease-in-out infinite 1s',
-        }}
-      />
-      <div
-        className="absolute left-1/4 top-32 w-16 h-16 bg-n-yellow opacity-80 hidden md:block"
-        style={{
-          clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-          transform: `translate(${mouse.x * 20}px, ${mouse.y * -12}px)`,
-          transition: 'transform 0.2s linear',
-          animation: 'float 7s ease-in-out infinite 0.5s',
-        }}
-        aria-hidden="true"
-      />
+      {/* Main hero content container */}
+      <div className="relative flex-grow flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 w-full z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
+          {/* Left Column: Headings, Badges, Subtitle & Action Buttons */}
+          <div className="lg:col-span-7 flex flex-col">
+            {/* Host University & Tech Club Badges */}
+            <div
+              className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-6 transition-all duration-700"
+              style={{
+                opacity: loaded ? 1 : 0,
+                transform: loaded ? 'translateY(0)' : 'translateY(-16px)',
+              }}
+            >
+              {/* GEHU Badge */}
+              <div className="flex items-center gap-2 bg-n-card border-2 border-n-border px-3 py-1.5 shadow-[3px_3px_0px_0px_rgba(26,26,26,1)]">
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/gehu-logo.jpg`}
+                  alt="Graphic Era Hill University"
+                  className="h-6 w-auto object-contain mix-blend-multiply"
+                />
+                <span className="font-headline font-black text-[11px] sm:text-xs uppercase tracking-wider text-n-border">
+                  GEHU Bhimtal
+                </span>
+              </div>
 
-      {/* GEHU Logo */}
-      <a
-        href="#"
-        onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-        className="absolute left-10 sm:left-16 top-16 sm:top-20 w-64 sm:w-80 opacity-70 hover:opacity-100 transition-opacity duration-300 hidden md:block mix-blend-multiply z-20 cursor-pointer"
-      >
-        <img src={`${import.meta.env.BASE_URL}assets/gehu-logo.jpg`} alt="GEHU Logo" className="w-full h-auto" loading="eager" />
-      </a>
+              {/* Tech Geeks Badge */}
+              <div className="flex items-center gap-2 bg-n-card border-2 border-n-border px-3 py-1.5 shadow-[3px_3px_0px_0px_rgba(26,26,26,1)]">
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/tech-geeks-logo.jpg`}
+                  alt="Tech Geeks Club"
+                  className="h-6 w-auto object-contain mix-blend-multiply"
+                />
+                <span className="font-headline font-black text-[11px] sm:text-xs uppercase tracking-wider text-n-border">
+                  Tech Geeks
+                </span>
+              </div>
 
-      {/* Tech Geeks Logo */}
-      <a
-        href="#"
-        onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-        className="absolute right-10 sm:right-16 top-16 sm:top-20 w-48 sm:w-56 opacity-70 hover:opacity-100 transition-opacity duration-300 hidden md:block mix-blend-multiply z-20 cursor-pointer"
-      >
-        <img src={`${import.meta.env.BASE_URL}assets/tech-geeks-logo.jpg`} alt="Tech Geeks Logo" className="w-full h-auto" loading="eager" />
-      </a>
+              {/* Annual Fest Pill */}
+              <span className="section-label text-[11px] py-1">Annual Tech Fest</span>
+            </div>
 
-      {/* Main content */}
-      <div className="relative flex-grow flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-        {/* Label — slide in from left */}
-        <div
-          className="flex items-center gap-4 mb-8 transition-all duration-700"
-          style={{
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? 'translateX(0)' : 'translateX(-32px)',
-            transitionDelay: '100ms',
-          }}
-        >
-          <span className="section-label">Annual Tech Fest</span>
-          <div className="flex items-center gap-1.5 text-n-muted text-xs font-headline uppercase tracking-widest">
-            <MapPin className="w-3 h-3" aria-hidden="true" />
-            <span>Graphic Era Hill University</span>
+            {/* Main Headline */}
+            <h1
+              className="font-headline font-black uppercase leading-[0.92] text-n-border mb-5 text-[clamp(52px,9vw,120px)] tracking-tight transition-all duration-700"
+              style={{
+                opacity: loaded ? 1 : 0,
+                transform: loaded ? 'translateY(0)' : 'translateY(24px)',
+                transitionDelay: '120ms',
+              }}
+            >
+              NI<span className="text-n-yellow">RV</span>AN<br />
+              <span className="text-n-yellow">'26</span>
+              <span
+                className="inline-block w-[6px] h-[0.8em] bg-n-yellow ml-2 sm:ml-3 align-baseline"
+                style={{ animation: 'blink 1s step-end infinite' }}
+                aria-hidden="true"
+              />
+            </h1>
+
+            {/* Description */}
+            <p
+              className="font-body text-n-muted-lt text-base sm:text-lg max-w-xl mb-8 leading-relaxed transition-all duration-700"
+              style={{
+                opacity: loaded ? 1 : 0,
+                transform: loaded ? 'translateY(0)' : 'translateY(20px)',
+                transitionDelay: '240ms',
+              }}
+            >
+              Four days. Five events. One campus-wide showdown. Hackathons, CTF cybersecurity,
+              E-Sports tournament, and hands-on workshops — all under one roof at Graphic Era Hill University, Bhimtal.
+            </p>
+
+            {/* Action Buttons */}
+            <div
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 transition-all duration-700"
+              style={{
+                opacity: loaded ? 1 : 0,
+                transform: loaded ? 'translateY(0)' : 'translateY(20px)',
+                transitionDelay: '360ms',
+              }}
+            >
+              <button
+                onClick={onExploreClick}
+                className="brutal-btn justify-center group flex items-center gap-2 py-3.5 px-6"
+              >
+                <span>Explore Events</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </button>
+              <button
+                onClick={onRegisterClick}
+                className="brutal-btn-outline justify-center py-3.5 px-6"
+              >
+                Register Now
+              </button>
+              <div className="flex items-center justify-center sm:justify-start gap-2 text-n-muted text-xs font-headline font-bold uppercase tracking-wider pt-2 sm:pt-0 sm:ml-2">
+                <Calendar className="w-4 h-4 text-n-yellow shrink-0" aria-hidden="true" />
+                <span>Oct 24–27, 2026</span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Headline — staggered fade-up */}
-        <h1
-          className="font-headline font-black uppercase leading-[0.9] text-n-border mb-6 text-[clamp(60px,12vw,160px)] tracking-tighter transition-all duration-700"
-          style={{
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? 'translateY(0)' : 'translateY(32px)',
-            transitionDelay: '200ms',
-          }}
-        >
-          NI<span className="text-n-yellow">RV</span>AN<br />
-          <span className="text-n-yellow">'26</span>
-          <span
-            className="inline-block w-[4px] h-[0.85em] bg-n-yellow ml-3 align-middle"
-            style={{ animation: 'blink 1.1s step-end infinite' }}
-            aria-hidden="true"
-          />
-        </h1>
+          {/* Right Column: Festival Countdown Card */}
+          <div
+            className="lg:col-span-5 w-full transition-all duration-700"
+            style={{
+              opacity: loaded ? 1 : 0,
+              transform: loaded ? 'translateY(0)' : 'translateY(28px)',
+              transitionDelay: '480ms',
+            }}
+          >
+            <div className="card-brutal p-6 sm:p-7 bg-n-card border-2 border-n-border shadow-[8px_8px_0px_0px_rgba(26,26,26,1)]">
+              {/* Card Header */}
+              <div className="flex items-center justify-between pb-4 mb-5 border-b-2 border-n-border">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse" />
+                  <span className="font-headline font-black text-xs uppercase tracking-widest text-n-border">
+                    Festival Countdown
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono font-bold uppercase text-n-muted bg-n-bg border border-n-border px-2 py-0.5">
+                  Live Counter
+                </span>
+              </div>
 
-        <p
-          className="font-body text-n-muted-lt text-lg max-w-xl mb-10 leading-relaxed transition-all duration-700"
-          style={{
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? 'translateY(0)' : 'translateY(24px)',
-            transitionDelay: '350ms',
-          }}
-        >
-          Four days. Five events. One campus-wide showdown.
-          Hackathons, CTF, E-Sports, Workshops — all under one roof at GEHU, Bhimtal.
-        </p>
+              {/* 4 Countdown Blocks */}
+              <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-6">
+                {[
+                  { value: time.days, label: 'Days' },
+                  { value: time.hours, label: 'Hours' },
+                  { value: time.minutes, label: 'Minutes' },
+                  { value: time.seconds, label: 'Seconds' },
+                ].map(({ value, label }) => (
+                  <CountdownUnit key={label} value={value} label={label} />
+                ))}
+              </div>
 
-        {/* CTAs */}
-        <div
-          className="flex flex-wrap items-center gap-4 mb-14 transition-all duration-700"
-          style={{
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? 'translateY(0)' : 'translateY(24px)',
-            transitionDelay: '480ms',
-          }}
-        >
-          <button onClick={onExploreClick} className="brutal-btn group flex items-center gap-2">
-            Explore Events
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-          </button>
-          <button onClick={onRegisterClick} className="brutal-btn-outline">
-            Register Now
-          </button>
-          <div className="flex items-center gap-2 text-n-muted-lt text-sm font-headline uppercase tracking-widest ml-2">
-            <Calendar className="w-4 h-4 text-n-border" aria-hidden="true" />
-            <span>Oct 24–27, 2026</span>
+              {/* Quick Details Box inside Card */}
+              <div className="bg-n-bg border-2 border-n-border p-3.5 space-y-2 text-xs font-body">
+                <div className="flex items-center justify-between">
+                  <span className="font-headline font-bold uppercase text-n-muted text-[11px] flex items-center gap-1.5">
+                    <Trophy className="w-3.5 h-3.5 text-n-yellow" /> Total Cash Pool
+                  </span>
+                  <span className="font-headline font-black text-n-border">₹1,75,000+</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-headline font-bold uppercase text-n-muted text-[11px] flex items-center gap-1.5">
+                    <Users className="w-3.5 h-3.5 text-n-yellow" /> Participants
+                  </span>
+                  <span className="font-headline font-black text-n-border">500+ Expected</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-headline font-bold uppercase text-n-muted text-[11px] flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-n-yellow" /> Location
+                  </span>
+                  <span className="font-headline font-black text-n-border truncate max-w-[170px]">
+                    GEHU, Bhimtal
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Countdown */}
-        <div
-          className="flex items-end gap-4 transition-all duration-700"
-          style={{
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? 'translateY(0)' : 'translateY(24px)',
-            transitionDelay: '600ms',
-          }}
-        >
-          <div className="text-xs font-headline uppercase tracking-widest text-n-muted mb-2">Starts in</div>
-          {[
-            { value: time.days,    label: 'Days' },
-            { value: time.hours,   label: 'Hrs' },
-            { value: time.minutes, label: 'Min' },
-            { value: time.seconds, label: 'Sec' },
-          ].map(({ value, label }) => (
-            <CountdownUnit key={label} value={value} label={label} />
-          ))}
         </div>
       </div>
 
-      {/* Scroll hint */}
-      <div className="relative flex justify-center pb-8">
-        <div
-          className="flex flex-col items-center gap-1 text-n-yellow opacity-60 hover:opacity-100 cursor-pointer transition-opacity"
-          onClick={onExploreClick}
-          style={{ animation: 'float 2s ease-in-out infinite' }}
-        >
-          <span className="font-headline text-[10px] uppercase tracking-widest text-n-muted">Scroll</span>
-          <ChevronDown className="w-6 h-6" aria-hidden="true" />
-        </div>
-      </div>
-
-      {/* Ticker strip */}
-      <div className="border-t-4 border-b-4 border-n-border bg-n-yellow ticker-wrap py-3">
+      {/* Bottom Ticker Strip */}
+      <div className="border-t-2 border-b-2 border-n-border bg-n-yellow ticker-wrap py-2.5 select-none mt-auto">
         <div className="ticker-inner">
-          <span className="font-headline font-black uppercase text-black text-sm tracking-widest whitespace-nowrap px-8">
+          <span className="font-headline font-black uppercase text-black text-xs sm:text-sm tracking-widest whitespace-nowrap px-6">
             {tickerText}
           </span>
         </div>

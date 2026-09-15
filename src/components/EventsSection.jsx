@@ -192,7 +192,7 @@ export default function EventsSection({ onRegisterClick }) {
   });
 
   return (
-    <section id="events" className="py-24 bg-n-bg">
+    <section id="events" className="py-24 bg-n-bg scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div

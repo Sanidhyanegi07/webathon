@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
   
   ::selection { background: #FFCC00; color: #1A1A1A; }
   ::-moz-selection { background: #FFCC00; color: #1A1A1A; }

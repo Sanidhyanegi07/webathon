@@ -2,23 +2,24 @@ import { useState } from 'react';
 import { SCHEDULE } from '../data/index';
 import { cn } from '../lib/utils';
 import { useInView } from '../hooks/useInView';
+import { MapPin, Calendar, Clock, Sparkles } from 'lucide-react';
 
 const TRACKS = ['All', 'General', 'Coding', 'Adventure', 'Gaming', 'Security', 'Learning'];
 
 const TRACK_COLORS = {
-  General: 'bg-n-yellow text-black',
-  Coding: 'bg-blue-500 text-white',
-  Adventure: 'bg-amber-500 text-black',
-  Gaming: 'bg-green-500 text-black',
-  Security: 'bg-red-500 text-white',
-  Learning: 'bg-purple-500 text-white',
+  General: 'bg-n-yellow text-black border-n-border',
+  Coding: 'bg-blue-600 text-white border-blue-800',
+  Adventure: 'bg-amber-500 text-black border-amber-700',
+  Gaming: 'bg-emerald-500 text-black border-emerald-700',
+  Security: 'bg-red-600 text-white border-red-800',
+  Learning: 'bg-purple-600 text-white border-purple-800',
 };
 
 const TRACK_DOT = {
   General: 'bg-n-yellow',
   Coding: 'bg-blue-500',
   Adventure: 'bg-amber-500',
-  Gaming: 'bg-green-500',
+  Gaming: 'bg-emerald-500',
   Security: 'bg-red-500',
   Learning: 'bg-purple-500',
 };
@@ -35,7 +36,7 @@ export default function ScheduleSection() {
     return d;
   };
 
-  const filtered = SCHEDULE.filter(item => {
+  const filtered = SCHEDULE.filter((item) => {
     const matchDay = item.day === activeDay;
     const matchTrack = activeTrack === 'All' || item.track === activeTrack;
     return matchDay && matchTrack;
@@ -51,117 +52,158 @@ export default function ScheduleSection() {
   };
 
   return (
-    <section id="schedule" className="py-24 bg-n-surface border-t border-n-border">
+    <section id="schedule" className="py-24 bg-n-surface border-t-2 border-n-border scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div
           ref={ref}
           className={cn(
-            'mb-12 pb-8 border-b border-n-border transition-all duration-700',
+            'mb-12 pb-8 border-b-2 border-n-border flex flex-col md:flex-row md:items-end justify-between gap-4 transition-all duration-700',
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
         >
-          <span className="section-label mb-4 inline-block">Oct 24–27</span>
-          <h2 className="font-headline font-black text-5xl md:text-7xl uppercase text-n-border leading-none">
-            Master <span className="text-n-yellow">Schedule</span>
-          </h2>
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="section-label inline-block">4-Day Timeline</span>
+              <span className="text-xs font-mono font-bold text-n-muted uppercase bg-n-card border border-n-border px-2 py-0.5">
+                Oct 24 — 27, 2026
+              </span>
+            </div>
+            <h2 className="font-headline font-black text-5xl md:text-7xl uppercase text-n-border leading-none">
+              Master <span className="text-n-yellow">Schedule</span>
+            </h2>
+          </div>
+          <p className="font-body text-n-muted-lt max-w-sm text-sm leading-relaxed">
+            Synchronized event timeline across all auditoriums, computer labs, and campus grounds.
+          </p>
         </div>
 
-        {/* Controls */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-10">
-          {/* Day toggle */}
-          <div className="flex gap-2">
-            {[1, 2, 3, 4].map(day => (
-              <button
-                key={day}
-                onClick={() => setActiveDay(day)}
-                className={cn(
-                  'font-headline font-black uppercase text-sm px-6 py-2.5 border-2 transition-all duration-150',
-                  activeDay === day
-                    ? 'bg-n-yellow border-n-yellow text-black'
-                    : 'border-n-border text-n-muted hover:border-n-yellow hover:text-n-yellow'
-                )}
-              >
-                Day {day} — Oct {23 + day}
-              </button>
-            ))}
+        {/* Day Selectors */}
+        <div className="mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+            {[1, 2, 3, 4].map((day) => {
+              const isActive = activeDay === day;
+              return (
+                <button
+                  key={day}
+                  onClick={() => setActiveDay(day)}
+                  className={cn(
+                    'p-3 sm:p-4 border-2 font-headline font-black text-left transition-all duration-200',
+                    isActive
+                      ? 'bg-n-yellow border-n-border text-black shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] -translate-y-1'
+                      : 'bg-n-card border-n-border text-n-border hover:bg-n-bg hover:border-n-yellow hover:shadow-[3px_3px_0px_0px_rgba(26,26,26,1)]'
+                  )}
+                >
+                  <span className="block text-[10px] uppercase tracking-widest font-mono text-black/60 mb-0.5">
+                    DAY 0{day}
+                  </span>
+                  <span className="block text-base sm:text-lg uppercase leading-tight">
+                    Oct {23 + day}
+                  </span>
+                </button>
+              );
+            })}
           </div>
+        </div>
 
-          {/* Track filter */}
-          <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
-            {TRACKS.map(track => (
+        {/* Track Filters */}
+        <div className="mb-10 flex items-center gap-2 overflow-x-auto scrollbar-hide pb-2">
+          <span className="text-xs font-headline font-black uppercase text-n-muted tracking-wider mr-1 hidden sm:inline-block">
+            Filter:
+          </span>
+          {TRACKS.map((track) => {
+            const isActive = activeTrack === track;
+            return (
               <button
                 key={track}
                 onClick={() => setActiveTrack(track)}
                 className={cn(
-                  'font-headline font-bold text-xs uppercase tracking-widest px-3 py-1.5 border whitespace-nowrap transition-all',
-                  activeTrack === track
-                    ? 'bg-n-border border-n-border text-n-cream'
-                    : 'border-n-border text-n-muted hover:border-n-border hover:text-n-border'
+                  'text-xs font-headline font-black uppercase tracking-wider px-3.5 py-1.5 border-2 transition-all whitespace-nowrap',
+                  isActive
+                    ? 'bg-n-border text-n-yellow border-n-border shadow-[2px_2px_0px_0px_rgba(255,204,0,1)]'
+                    : 'bg-n-card text-n-border border-n-border hover:border-n-yellow hover:text-n-yellow'
                 )}
               >
                 {track}
               </button>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-20 md:left-28 top-0 bottom-0 w-px bg-n-border" />
-
-          <div className="flex flex-col gap-0">
-            {filtered.map((item, i) => {
+        {/* Events Schedule List */}
+        {filtered.length === 0 ? (
+          <div className="text-center py-16 bg-n-card border-2 border-dashed border-n-border">
+            <Clock className="w-8 h-8 text-n-muted mx-auto mb-2" />
+            <p className="font-headline font-black text-lg uppercase text-n-muted">No scheduled sessions for this track</p>
+            <button
+              onClick={() => setActiveTrack('All')}
+              className="mt-3 text-xs font-headline font-bold text-n-border underline"
+            >
+              Show all tracks
+            </button>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {filtered.map((item) => {
               const isCurrent = isCurrentItem(item);
               return (
                 <div
                   key={item.id}
                   className={cn(
-                    'relative flex items-start gap-6 md:gap-8 py-5 group transition-all duration-300 hover:bg-n-yellow/5 hover:pl-6 -ml-6 pr-6 hover:pr-0 rounded-r-lg',
-                    i < filtered.length - 1 && 'border-b border-n-border/50'
+                    'card-brutal p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-200',
+                    isCurrent
+                      ? 'bg-n-yellow/15 border-n-yellow shadow-[4px_4px_0px_0px_rgba(255,204,0,1)]'
+                      : 'bg-n-card hover:border-n-border hover:shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] hover:-translate-y-0.5'
                   )}
                 >
-                  {/* Time */}
-                  <div className="w-20 md:w-28 shrink-0 pt-0.5 text-right transition-transform duration-300 group-hover:-translate-x-2">
-                    <span className={cn(
-                      'font-headline font-black text-xl tabular-nums transition-colors',
-                      isCurrent ? 'text-n-yellow' : 'text-n-muted group-hover:text-n-border'
-                    )}>
-                      {item.time}
-                    </span>
-                  </div>
-
-                  {/* Node */}
-                  <div className="absolute left-[80px] md:left-[112px] -translate-x-1/2 pt-2.5 z-10 transition-transform duration-500 group-hover:scale-[1.5] group-hover:rotate-45">
-                    <div className={cn(
-                      'w-3 h-3 border-2 border-n-bg transition-all',
-                      isCurrent
-                        ? 'bg-n-yellow scale-125'
-                        : TRACK_DOT[item.track] || 'bg-n-muted'
-                    )} />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-grow flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pl-4 transition-transform duration-300 group-hover:translate-x-2">
-                    <div>
-                      {isCurrent && (
-                        <span className="inline-block font-headline text-[10px] font-bold uppercase tracking-widest bg-n-yellow text-black px-2 py-0.5 mb-1 animate-pulse">
-                          Live Now
-                        </span>
-                      )}
-                      <h3 className={cn(
-                        'font-headline font-black text-lg md:text-xl uppercase leading-tight group-hover:text-n-yellow transition-colors',
-                        isCurrent ? 'text-n-yellow' : 'text-n-border'
-                      )}>
-                        {item.label}
-                      </h3>
-                      <span className="font-body text-xs font-bold uppercase tracking-widest text-n-muted mt-1 block group-hover:text-n-border/60 transition-colors">{item.venue}</span>
+                  {/* Left block: Time box + Dot indicator + Event Details */}
+                  <div className="flex items-start sm:items-center gap-3.5 sm:gap-5 flex-grow">
+                    {/* Time badge - separated from everything */}
+                    <div className="shrink-0 flex flex-col items-center justify-center bg-n-bg border-2 border-n-border px-3 py-1.5 min-w-[82px] sm:min-w-[96px] text-center shadow-[2px_2px_0px_0px_rgba(26,26,26,1)]">
+                      <span className="font-headline font-black text-sm sm:text-base text-n-border tabular-nums leading-tight">
+                        {item.time}
+                      </span>
+                      <span className="text-[9px] font-mono uppercase text-n-muted font-bold mt-0.5">
+                        IST
+                      </span>
                     </div>
-                    <span className={cn(
-                      'text-[10px] font-headline font-bold uppercase tracking-widest px-2 py-1 shrink-0 self-start sm:self-auto shadow-brutal transition-transform duration-300 group-hover:-translate-y-1',
-                      TRACK_COLORS[item.track] || 'bg-n-border text-n-muted'
-                    )}>
+
+                    {/* Colored Track Dot indicator */}
+                    <div
+                      className={cn(
+                        'w-3.5 h-3.5 rounded-none border-2 border-n-border shrink-0 mt-1.5 sm:mt-0',
+                        TRACK_DOT[item.track] || 'bg-n-muted'
+                      )}
+                      title={`Track: ${item.track}`}
+                    />
+
+                    {/* Event info */}
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-2 flex-wrap mb-1">
+                        {isCurrent && (
+                          <span className="inline-flex items-center gap-1 font-headline text-[9px] font-black uppercase tracking-wider bg-n-yellow text-black px-2 py-0.5 border border-n-border animate-pulse">
+                            ● Live Now
+                          </span>
+                        )}
+                        <h3 className="font-headline font-black text-base sm:text-lg uppercase text-n-border leading-snug">
+                          {item.label}
+                        </h3>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-xs text-n-muted font-body font-medium">
+                        <MapPin className="w-3.5 h-3.5 text-n-yellow shrink-0" />
+                        <span>{item.venue}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right block: Track badge tag */}
+                  <div className="self-end sm:self-center shrink-0">
+                    <span
+                      className={cn(
+                        'text-[10px] font-headline font-black uppercase tracking-widest px-3 py-1 border-2 shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] inline-block',
+                        TRACK_COLORS[item.track] || 'bg-n-border text-white border-n-border'
+                      )}
+                    >
                       {item.track}
                     </span>
                   </div>
@@ -169,7 +211,7 @@ export default function ScheduleSection() {
               );
             })}
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

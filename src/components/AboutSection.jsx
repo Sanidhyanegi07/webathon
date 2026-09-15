@@ -49,7 +49,7 @@ export default function AboutSection() {
   const { ref: statsRef, inView: statsIn } = useInView({ threshold: 0.15 });
 
   return (
-    <section id="about" className="py-24 bg-n-surface border-t-4 border-n-border overflow-hidden">
+    <section id="about" className="py-24 bg-n-surface border-t-4 border-n-border overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 

@@ -88,7 +88,7 @@ export default function SponsorsSection() {
   const { ref, inView } = useInView({ threshold: 0.1 });
 
   return (
-    <section id="sponsors" className="py-24 bg-n-surface border-t-2 border-n-border overflow-hidden">
+    <section id="sponsors" className="py-24 bg-n-surface border-t-2 border-n-border overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div

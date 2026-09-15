@@ -16,7 +16,7 @@ export default function SpeakersSection() {
   const { ref, inView } = useInView({ threshold: 0.15 });
 
   return (
-    <section id="speakers" className="py-24 bg-n-bg border-t-2 border-n-border">
+    <section id="speakers" className="py-24 bg-n-bg border-t-2 border-n-border scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div
