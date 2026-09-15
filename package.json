@@ -1,8 +1,27 @@
 {
   "name": "nirvan-26",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
+  "description": "Official website for NIRVAN '26 — Annual Technical Festival at Graphic Era Hill University (GEHU). Built with React 18, Vite, Tailwind CSS, and Firebase.",
   "type": "module",
+  "homepage": "https://webathon-nirvan.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sanidhyanegi07/webathon.git"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "tailwindcss",
+    "firebase",
+    "hackathon",
+    "neobrutalism",
+    "bauhaus",
+    "college-fest",
+    "showcase"
+  ],
+  "author": "Sanidhya Negi <https://github.com/sanidhyanegi07>",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
