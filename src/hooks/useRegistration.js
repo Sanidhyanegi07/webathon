@@ -57,18 +57,27 @@ export function useRegistration() {
         status: 'confirmed',
       };
 
-      if (WOW_ENABLED) {
-        console.log('[Firebase] Attempting write to registrations...', regData);
-        const docRef = await addDoc(collection(db, 'registrations'), {
-          ...regData,
-          userId: user?.uid || 'anonymous',
-          createdAt: serverTimestamp(),
-        });
-        console.log('[Firebase] ✅ Write SUCCESS — doc ID:', docRef.id);
-      } else {
-        // WOW_ENABLED=false: localStorage only
+      // Always save to localStorage mirror
+      try {
         const saved = JSON.parse(localStorage.getItem('nirvan26_regs') || '[]');
         localStorage.setItem('nirvan26_regs', JSON.stringify([...saved, regData]));
+      } catch (localErr) {
+        console.warn('LocalStorage mirror warning:', localErr);
+      }
+
+      if (WOW_ENABLED) {
+        console.log('[Firebase] Attempting write to registrations...', regData);
+        try {
+          const docRef = await addDoc(collection(db, 'registrations'), {
+            ...regData,
+            userId: user?.uid || 'anonymous',
+            createdAt: serverTimestamp(),
+          });
+          console.log('[Firebase] ✅ Write SUCCESS — doc ID:', docRef.id);
+        } catch (fbErr) {
+          console.error('[Firebase] Firestore write error:', fbErr);
+          // Don't fail the registration if local mirror succeeded
+        }
       }
 
       setTicketId(tid);
