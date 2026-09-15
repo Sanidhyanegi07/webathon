@@ -89,7 +89,7 @@ export default function ContactSection() {
                 { value: '5', label: 'Events' },
                 { value: '₹1.75L', label: 'Total Prizes' },
                 { value: '500+', label: 'Expected Participants' },
-                { value: '2 Days', label: 'Duration' },
+                { value: '4 Days', label: 'Duration' },
               ].map(({ value, label }) => (
                 <div key={label} className="bg-n-card border-2 border-n-border p-6 flex flex-col group hover:-translate-y-2 hover:shadow-brutal-lg transition-all duration-300">
                   <span className="font-headline font-black text-3xl md:text-4xl text-n-border mb-1 group-hover:text-n-yellow transition-colors">{value}</span>
@@ -105,7 +105,7 @@ export default function ContactSection() {
                 {[
                   { q: 'Do I need to pay to participate?', a: 'Yes, minimal registration fees per event. See event details.' },
                   { q: 'Can I register for multiple events?', a: 'Absolutely — register individually for each event you want.' },
-                  { q: 'Will food be provided?', a: 'Lunch provided on both days. Breakfast & dinner are self-arranged.' },
+                  { q: 'Will food be provided?', a: 'Lunch provided on all 4 days. Breakfast & dinner are self-arranged.' },
                   { q: 'Is accommodation available?', a: 'Outstation participants can contact us for hostel arrangements.' },
                 ].map(({ q, a }) => (
                   <div key={q} className="border-b-2 border-n-border/50 pb-3 last:border-0 last:pb-0 group/item transition-colors hover:border-n-yellow">

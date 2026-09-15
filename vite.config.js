@@ -8,5 +8,16 @@ export default defineConfig({
     port: 3000,
     open: true,
     host: true
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-firebase': ['firebase/app', 'firebase/firestore', 'firebase/auth', 'firebase/analytics'],
+          'vendor-ui': ['lucide-react', 'canvas-confetti', 'clsx', 'tailwind-merge'],
+        }
+      }
+    }
   }
 })
