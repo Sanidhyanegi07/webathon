@@ -28,9 +28,9 @@ export default function AboutSection() {
               { value: '500+', label: 'Expected Participants', color: 'border-n-yellow' },
               { value: '₹1.75L', label: 'Total Prize Pool', color: 'border-red-500' },
               { value: '5', label: 'Flagship Events', color: 'border-blue-500' },
-              { value: '2 Days', label: 'Non-stop Action', color: 'border-purple-500' },
+              { value: '4 Days', label: 'Non-stop Action', color: 'border-purple-500' },
               { value: '4+', label: 'Industry Speakers', color: 'border-green-500' },
-              { value: '2026', label: 'Edition Number 4', color: 'border-amber-500' },
+              { value: '4th', label: 'Annual Edition', color: 'border-amber-500' },
             ].map(({ value, label, color }) => (
               <div key={label} className={`bg-n-card border-2 border-n-border border-t-4 ${color} p-6 group hover:-translate-y-2 hover:shadow-brutal-lg transition-all duration-300 relative overflow-hidden`}>
                 <div className={`absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-10 rounded-bl-full transition-all duration-500 ${color.replace('border-', 'bg-')}`}></div>

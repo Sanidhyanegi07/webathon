@@ -26,6 +26,13 @@
     <meta property="twitter:image" content="https://webathon-nirvan.vercel.app/assets/nirvan-banner.jpg" />
 
     <title>NIRVAN '26 — Technical Fest | GEHU Bhimtal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/assets/gehu-logo.jpg" />
+    <link rel="apple-touch-icon" href="/assets/gehu-logo.jpg" />
+    
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="/assets/nirvan-banner.jpg" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,11 +45,9 @@
       </div>
     </noscript>
     <script>
-      window.onerror = function(msg, url, line, col, error) {
-        document.body.innerHTML = '<div style="color:red; padding: 20px; font-family: monospace;"><h2>React Error:</h2><p>' + msg + '</p><pre>' + (error ? error.stack : '') + '</pre></div>';
-      };
+      // Log errors to console only — never wipe the page in production
       window.addEventListener('unhandledrejection', function(event) {
-        document.body.innerHTML = '<div style="color:red; padding: 20px; font-family: monospace;"><h2>Unhandled Promise Rejection:</h2><p>' + event.reason + '</p><pre>' + (event.reason ? event.reason.stack : '') + '</pre></div>';
+        console.error('Unhandled Promise Rejection:', event.reason);
       });
     </script>
     <div id="root"></div>

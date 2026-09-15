@@ -4,10 +4,10 @@ import { cn } from '../lib/utils';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#' },
+  { label: 'About', href: '#about' },
   { label: 'Events', href: '#events' },
   { label: 'Schedule', href: '#schedule' },
   { label: 'Speakers', href: '#speakers' },
-  { label: 'Sponsors', href: '#sponsors' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' },
 ];

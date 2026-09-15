@@ -61,13 +61,15 @@ export default function ContactSection() {
               <h3 className="font-headline font-bold text-xs uppercase tracking-widest text-n-muted mb-4">Follow Us</h3>
               <div className="flex gap-3">
                 {[
-                  { icon: Instagram, label: '@nirvan_gehu', href: '#' },
-                  { icon: Linkedin, label: 'NIRVAN GEHU', href: '#' },
-                  { icon: Github, label: 'nirvan-26', href: '#' },
+                  { icon: Instagram, label: '@nirvan_gehu', href: 'https://www.instagram.com/' },
+                  { icon: Linkedin, label: 'NIRVAN GEHU', href: 'https://www.linkedin.com/' },
+                  { icon: Github, label: 'nirvan-26', href: 'https://github.com/' },
                 ].map(({ icon: Icon, label, href }) => (
                   <a
                     key={label}
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 border border-n-border text-n-muted hover:border-n-yellow hover:text-n-yellow px-4 py-2 transition-all font-headline text-xs uppercase tracking-widest"
                     aria-label={label}
                   >

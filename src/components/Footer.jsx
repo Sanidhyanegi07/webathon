@@ -1,6 +1,28 @@
-import { Zap } from 'lucide-react';
+import { useState } from 'react';
+import { Zap, CheckCircle } from 'lucide-react';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../lib/firebase';
 
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [subStatus, setSubStatus] = useState('idle'); // idle | loading | done | error
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+    setSubStatus('loading');
+    try {
+      await addDoc(collection(db, 'newsletter'), { email, subscribedAt: serverTimestamp() });
+      setSubStatus('done');
+      setEmail('');
+    } catch {
+      const subs = JSON.parse(localStorage.getItem('nirvan26_newsletter') || '[]');
+      localStorage.setItem('nirvan26_newsletter', JSON.stringify([...subs, { email, ts: Date.now() }]));
+      setSubStatus('done');
+      setEmail('');
+    }
+  };
+
   return (
     <footer className="bg-n-bg border-t-4 border-n-border py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,16 +69,32 @@ export default function Footer() {
               Stay Updated
               <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-n-yellow"></span>
             </h3>
-            <div className="flex border-2 border-n-border bg-n-card focus-within:shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] focus-within:-translate-y-1 transition-all duration-300">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="bg-transparent flex-grow px-4 py-2.5 text-xs font-body text-n-border placeholder-n-muted focus:outline-none"
-              />
-              <button className="bg-n-border text-n-cream font-headline font-black text-xs uppercase px-4 py-2.5 hover:bg-n-yellow hover:text-n-border transition-colors border-l-2 border-n-border group">
-                <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
-              </button>
-            </div>
+            {subStatus === 'done' ? (
+              <div className="flex items-center gap-3 border-2 border-n-border bg-n-card px-4 py-3">
+                <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+                <span className="font-headline text-xs font-bold uppercase tracking-widest text-n-border">Subscribed!</span>
+              </div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex border-2 border-n-border bg-n-card focus-within:shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] focus-within:-translate-y-1 transition-all duration-300">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                  className="bg-transparent flex-grow px-4 py-2.5 text-xs font-body text-n-border placeholder-n-muted focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  disabled={subStatus === 'loading'}
+                  className="bg-n-border text-n-cream font-headline font-black text-xs uppercase px-4 py-2.5 hover:bg-n-yellow hover:text-n-border transition-colors border-l-2 border-n-border group disabled:opacity-60"
+                >
+                  <span className="inline-block group-hover:translate-x-1 transition-transform">
+                    {subStatus === 'loading' ? '…' : '→'}
+                  </span>
+                </button>
+              </form>
+            )}
             <p className="font-body text-[10px] text-n-muted mt-2">Updates on schedule, results, and announcements.</p>
           </div>
         </div>

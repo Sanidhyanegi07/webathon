@@ -127,6 +127,7 @@ export default function SponsorsSection() {
                 </ul>
 
                 <button
+                  onClick={() => window.location.href = `mailto:nirvan2026@gehu.ac.in?subject=Sponsorship%20Enquiry%20-%20${tier.name}%20Tier`}
                   className={cn(
                     "w-full py-4 font-headline font-bold text-xs uppercase tracking-widest border-2 transition-all relative z-10 overflow-hidden",
                     tier.isTitle
