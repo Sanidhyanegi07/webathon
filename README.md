@@ -1,29 +1,29 @@
 <div align="center">
 
-<img src="public/assets/nirvan-banner.jpg" alt="NIRVAN '26 — Annual Technical Festival" width="100%" />
+<img src="public/assets/nirvan-banner.jpg" alt="NIRVAN '26 — Annual Technical Festival" width="100%" style="border: 2px solid #1A1A1A; box-shadow: 6px 6px 0px #1A1A1A;" />
 
 <br />
 <br />
 
 # ⚡ NIRVAN '26 — Annual Technical Festival
-
-### *Where Innovation Meets Competition*
+### * Uttarakhand's Premier Engineering, Cyber & E-Sports Showdown *
 
 [![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Firebase](https://img.shields.io/badge/Firebase-10.7-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://webathon-nirvan.vercel.app)
+[![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://webathon-nirvan.vercel.app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 <br />
 
-**The official website for NIRVAN '26 — the flagship annual technical festival of [Graphic Era Hill University](https://www.gehu.ac.in/), Bhimtal.**
-Built with a bold **Brutalist / Bauhaus design language** that stands out from every other college fest website.
+**The official web platform for NIRVAN '26 — the flagship annual technical festival organized by [Graphic Era Hill University](https://www.gehu.ac.in/), Bhimtal in partnership with the Tech Geeks Club.**
+
+Built with a bold, functionalist **Brutalist / Bauhaus design language**, responsive cross-device layouts, custom React hook architectures, 3D physics-based card tilts, and zero-latency cloud registrations.
 
 <br />
 
-[🌐 **Live Demo**](https://webathon-nirvan.vercel.app) · [📋 **Report Bug**](https://github.com/sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/sanidhyanegi07/webathon/issues) · [🤝 **Sponsor Us**](#-sponsorship--partnership)
+[🌐 **Explore Live Demo**](https://webathon-nirvan.vercel.app) · [📋 **Report Issue**](https://github.com/Sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/Sanidhyanegi07/webathon/issues) · [🤝 **Sponsorship Deck**](#-sponsorship--partnership)
 
 ---
 
@@ -31,205 +31,124 @@ Built with a bold **Brutalist / Bauhaus design language** that stands out from e
 
 <br />
 
-## 📸 Preview
+## 📑 Table of Contents
 
-<div align="center">
-
-| Hero Section | Events Grid | Sponsor Tiers |
-|:---:|:---:|:---:|
-| Brutalist countdown timer with animated ticker strip & Bauhaus geometric elements | Filterable event cards with category tags & full-text search | 4-tier pricing grid with interactive hover transforms |
-
-| Schedule View | Speaker Directory | Registration Modal |
-|:---:|:---:|:---:|
-| Multi-day, track-filtered timeline with venue info | Expandable speaker profile cards with bios | Firebase-powered multi-step registration with confetti 🎉 |
-
-> **👆 See it live →** [webathon-nirvan.vercel.app](https://webathon-nirvan.vercel.app)
-
-</div>
-
-<br />
+- [🎯 Overview & Vision](#-overview--vision)
+- [✨ Key Architectural Highlights](#-key-architectural-highlights)
+- [🎨 Brutalist Design System](#-brutalist-design-system)
+- [🛠️ Tech Stack & Architecture](#️-tech-stack--architecture)
+- [🎪 Flagship Events](#-flagship-events)
+- [📅 Master Schedule Engine](#-master-schedule-engine)
+- [🏗️ Project Structure](#️-project-structure)
+- [🚀 Quickstart & Setup](#-quickstart--setup)
+- [🔥 Firebase Configuration](#-firebase-configuration)
+- [🚢 Automated CI/CD Deployment](#-automated-cicd-deployment)
+- [👥 Core Team & Contributors](#-core-team--contributors)
+- [📄 License](#-license)
 
 ---
 
-## 🎯 About the Project
+## 🎯 Overview & Vision
 
-**NIRVAN '26** is a 4-day, campus-wide technical festival at Graphic Era Hill University (GEHU), Bhimtal — bringing together **500+ participants**, **₹1.75 Lakh+ in prizes**, and **5 flagship events** under one roof.
+**NIRVAN '26** is a 4-day, inter-college technological summit bringing together **500+ student developers, ethical hackers, designers, and gamers** with a collective cash pool of **₹1,75,000+**.
 
-This repository houses the **official event website** — designed to serve as the single source of truth for event information, schedules, speaker profiles, sponsorship tiers, and live registrations. Every pixel is crafted with intention using a custom **brutalist design system** that commands attention.
+The web application acts as the digital command center for the festival:
+1. **Interactive Discovery**: Fast, client-side faceted filtering & full-text search across all competitions.
+2. **Zero-Friction Registration**: Google Auth + multi-step team registration with instant ticket issuance.
+3. **Master Timeline**: Synchronized schedule viewer with track filters and active live-session detection.
+4. **Partner Ecosystem**: Dynamic sponsor prospectus featuring animated marquees and tier comparisons.
 
-### 🏆 Why This Project Stands Out
+---
 
-| Feature | Description |
-|:---|:---|
-| 🎨 **Custom Brutalist Design System** | Hand-built component library (`brutal-btn`, `card-brutal`, `section-label`) — zero generic templates used |
-| 🪟 **Interactive 3D Tilt Cards** | Dynamic `perspective` and mouse-coordinate 3D tilt with real-time specular glare on event cards |
-| 🌊 **Scroll-Triggered Reveals** | Custom `useInView` hook utilizing `IntersectionObserver` for staggered fade & slide entrances |
-| 📊 **Animated Stat Counters** | Custom `useCountUp` hook easing from 0 to 500+ with cubic bezier curves on viewport entry |
-| ⚡ **Real-Time Countdown & Parallax** | Live countdown timer + mouse-tracking parallax on hero typography & Bauhaus geometric shapes |
-| 🎫 **Firebase Registration** | Full Google Auth + multi-step event registration with Firestore backend & localStorage fallback |
-| 🔎 **Smart Event Discovery** | Category filters + full-text search across 5 flagship events with detailed modals |
-| 📱 **Fully Responsive** | Optimized for all devices — mobile-first layout with progressive enhancement |
-| 🏢 **Sponsorship Portal & Marquee** | Infinite animated sponsor marquee strip + 4-tier pricing grid with animated shimmer border |
-| 🖼️ **Photo Gallery & Lightbox** | Category-filterable archive gallery with keyboard-navigable (`Esc`, `←`, `→`) lightbox modal |
-| 🗓️ **Multi-Day Schedule** | Day-by-day, track-filtered schedule viewer with live event status detection |
-| 🎙️ **Speaker Profiles** | Expandable speaker cards with gradient avatar rings, abstract drawers, and topic badges |
-| 🎟️ **Ticket Generation** | Auto-generated unique ticket IDs (e.g., `N26-X7K2P9`) with celebratory canvas confetti |
-| 📏 **Scroll Progress Indicator** | Fixed header progress indicator measuring reading depth across the landing page |
+## ✨ Key Architectural Highlights
 
-<br />
+| Module | Engineering Pattern | Impact |
+|:---|:---|:---|
+| **🪟 3D Perspective Tilt Cards** | Mouse-coordinate vector calculation with dynamic specular glare overlay & spring-like CSS transforms | High-impact visual engagement on desktop without layout jitter |
+| **🌊 Scroll Reveal Engine** | Custom `useInView` hook wrapping `IntersectionObserver` with configurable entry thresholds & stagger timing | Silky smooth section entrances without heavyweight external animation bundles |
+| **📊 Eased Stat Counters** | Custom `useCountUp` hook using `requestAnimationFrame` and a cubic ease-out curve (`1 - (1 - t)³`) | Numbers count smoothly from 0 to 500+ upon entering the viewport |
+| **🎫 Resilient Dual-Write** | Hybrid Firebase Firestore + synchronous `localStorage` fallback persistence | 100% registration reliability even under poor network or aggressive adblockers |
+| **📏 Scroll Progress Depth** | Hardware-accelerated fixed indicator synced with active section intersection | Immediate visual orientation across deep landing page content |
+| **📱 Desktop & Mobile Centric** | Balanced 2-column desktop grid & seamless mobile stack with zero text or node collisions | Zero horizontal overflow, tested on 360px–1920px viewports |
+
+---
+
+## 🎨 Brutalist Design System
+
+NIRVAN '26 rejects cookie-cutter corporate templates in favor of a raw, geometric, and functionalist **Bauhaus / Neo-Brutalist** aesthetic.
+
+### Color Palette
+
+| Swatch | Color Name | Hex Code | Purpose |
+|:---:|:---|:---|:---|
+| 🟡 | **Bauhaus Yellow** | `#FFCC00` | Primary brand accent, interactive highlights, CTA hover states |
+| ⬛ | **Ink Black** | `#1A1A1A` | Hard borders, heavy typography, brutalist drop-shadows |
+| 🟤 | **Cream Neutral** | `#F5F0E8` | Matte backdrop, high-contrast readable surfaces |
+| ⬜ | **Pure White** | `#FFFFFF` | Card backgrounds, elevated modal dialogs |
+| 🔴 | **Alert Red** | `#E63B2E` | Cybersecurity track accent, error states |
+| 🔵 | **Electric Blue** | `#0055FF` | Coding / Hackathon category badge, tech links |
+| 🟢 | **Emerald Green** | `#10B981` | Gaming / E-Sports category badge, live pulsing indicators |
+
+### Component Style Utility
+
+```css
+/* Signature Brutalist Components (src/index.css) */
+.brutal-btn {
+  /* Solid ink fill with 4px hard shadow, expands to 8px on hover */
+  border: 2px solid #1A1A1A;
+  box-shadow: 4px 4px 0px 0px #1A1A1A;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-brutal {
+  /* Elevated surface with clean high-contrast boundaries */
+  background: #FFFFFF;
+  border: 2px solid #1A1A1A;
+  box-shadow: 6px 6px 0px 0px #1A1A1A;
+}
+
+.section-label {
+  /* Upper-case badge with animated light shimmer */
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.25em;
+  background: rgba(255, 204, 0, 0.2);
+}
+```
 
 ---
 
 ## 🛠️ Tech Stack & Architecture
 
-<div align="center">
-
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                     NIRVAN '26 STACK                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌──────────────┐  ┌──────────┐  ┌────────────────────┐    │
-│  │  React 18    │  │  Vite 5  │  │  Tailwind CSS 3.4  │    │
-│  │  Frontend    │  │  Bundler  │  │     Styling        │    │
-│  └──────────────┘  └──────────┘  └────────────────────┘    │
-│                                                             │
-│  ┌──────────────┐  ┌────────────┐  ┌───────────────────┐   │
-│  │ Firebase 10  │  │   Lucide   │  │  Canvas Confetti  │   │
-│  │ Auth + Store │  │   Icons    │  │   Celebrations    │   │
-│  └──────────────┘  └────────────┘  └───────────────────┘   │
-│                                                             │
-│  ┌──────────────┐  ┌────────────┐  ┌───────────────────┐   │
-│  │   PostCSS    │  │ Autoprefxr │  │  GitHub Actions   │   │
-│  │  Processing  │  │  Compat    │  │     CI/CD         │   │
-│  └──────────────┘  └────────────┘  └───────────────────┘   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│                        NIRVAN '26 ARCHITECTURE                         │
+├────────────────────────────────────────────────────────────────────────┤
+│                                                                        │
+│   [ Client Browser ]                                                   │
+│           │                                                            │
+│           ├── Single Page App (React 18 + Vite 5 Bundler)              │
+│           │      ├── Presentation Layer (Tailwind CSS 3.4 + Space Gro) │
+│           │      ├── Custom Hooks (useInView, useCountUp, useReg)      │
+│           │      └── Component Tree (Hero, Schedule, Events, Modals)   │
+│           │                                                            │
+│           ├── Local State (LocalStorage Mirror & Ticket Cache)         │
+│           │                                                            │
+│           └── Cloud Services                                           │
+│                  ├── Google Firebase Auth (OAuth 2.0 Sign-In)          │
+│                  ├── Cloud Firestore (Encrypted Registration Store)    │
+│                  └── Vercel / GitHub Pages (Global Edge Distribution)  │
+│                                                                        │
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
-</div>
-
-| Layer | Technology | Purpose |
-|:---|:---|:---|
-| **Frontend Framework** | React 18 | Component-based UI with hooks & context API |
-| **Build Tool** | Vite 5 | Lightning-fast HMR, optimized production builds |
-| **Styling** | Tailwind CSS 3.4 | Utility-first CSS with custom brutalist theme extensions |
-| **Typography** | Space Grotesk + Inter + Bebas Neue | Headlines, body text, and decorative display via Google Fonts |
-| **Icons** | Lucide React | Consistent, tree-shakeable icon set (40+ icons used) |
-| **Backend** | Firebase (Auth + Firestore) | Google authentication & event registrations with real-time sync |
-| **Animations** | Canvas Confetti | Celebratory particle effects on successful registration |
-| **Utilities** | clsx + tailwind-merge | Conditional class composition without style conflicts |
-| **Deployment** | GitHub Pages | Automated CI/CD via GitHub Actions with SPA routing support |
-
-<br />
-
----
-
-## 🎨 Design System
-
-NIRVAN '26 follows a strict **Brutalist / Bauhaus** design philosophy — bold, geometric, unapologetic. No rounded corners. No soft shadows. Pure intention.
-
-### Color Palette
-
-| Swatch | Name | Hex | Usage |
-|:---:|:---|:---|:---|
-| 🟡 | **Accent Yellow** | `#FFCC00` | Primary accent, CTAs, highlights, selection |
-| ⬛ | **Border Black** | `#1A1A1A` | Borders, text, shadows, scrollbar thumb |
-| 🟤 | **Cream** | `#F5F0E8` | Background, negative space, scrollbar track |
-| ⬜ | **Surface White** | `#FFFFFF` | Cards, modals, input fields |
-| 🔴 | **Alert Red** | `#E63B2E` | Warnings, emphasis, speaker accents |
-| 🔵 | **Link Blue** | `#0055FF` | Interactive elements, CTF category |
-| ⚫ | **Muted** | `#6B6B6B` | Secondary text, timestamps |
-
-### Typography
-
-| Font | Weight | Usage |
-|:---|:---|:---|
-| **Space Grotesk** | 400–900 | Headlines, navigation, labels, countdown |
-| **Inter** | 400–700 | Body text, descriptions, bios |
-| **Bebas Neue** | 400 | Decorative / large display text |
-
-### Component Library
-
-```css
-.brutal-btn          /* Primary CTA — solid black bg, yellow on hover, shadow lift + offset */
-.brutal-btn-outline  /* Secondary CTA — outlined with fill-on-hover transition */
-.card-brutal         /* Content cards with 8px shadow offset on hover + translate */
-.section-label       /* Uppercase pill labels with shimmer gradient animation */
-.skeleton            /* Loading placeholder with shimmer animation */
-.ticker-wrap         /* Infinite horizontal scroll ticker (pauses on hover) */
-```
-
-**Signature Shadow Pattern:**
-```
-Normal:  4px 4px 0px 0px #1A1A1A
-Hover:   8px 8px 0px 0px #1A1A1A  (with -4px translate)
-Active:  0px 0px 0px 0px           (with +2px translate — "press" effect)
-```
-
-<br />
-
----
-
-## 🏗️ Project Structure
-
-```
-Web-a-thon/
-├── 📄 index.html                 # Entry point with SEO meta tags & error boundary
-├── 📦 package.json               # Dependencies & scripts
-├── 🎨 tailwind.config.js         # Custom theme (colors, fonts, animations, shadows)
-├── 🔧 vite.config.js             # Vite dev server on port 3000
-├── 🔧 postcss.config.js          # PostCSS + Autoprefixer pipeline
-├── 🔥 firebase.json              # Firebase hosting rules
-├── 🛡️ firestore.rules            # Firestore security rules
-│
-├── 📁 .github/
-│   └── workflows/
-│       └── deploy.yml            # GitHub Pages CI/CD pipeline (auto-build + deploy)
-│
-├── 📁 public/
-│   └── assets/
-│       ├── nirvan-banner.jpg     # Hero banner image
-│       ├── gehu-logo.jpg         # Graphic Era Hill University logo
-│       ├── tech-geeks-logo.jpg   # Tech Geeks club logo
-│       └── gallery/              # Event photo gallery images
-│           ├── photo1.jpg – photo5.jpg
-│
-└── 📁 src/
-    ├── 🏠 App.jsx                # Root layout — assembles all 9 sections + modal
-    ├── 🎨 index.css              # Global styles & Tailwind @layer overrides
-    ├── 🚀 main.jsx               # React DOM entry point
-    │
-    ├── 📁 components/            # UI Sections (11 components)
-    │   ├── Navbar.jsx            # Sticky navigation with mobile hamburger menu
-    │   ├── HeroSection.jsx       # Animated hero — countdown + ticker + Bauhaus shapes
-    │   ├── AboutSection.jsx      # Stats grid + festival description
-    │   ├── EventsSection.jsx     # Filterable event cards + detail modal
-    │   ├── ScheduleSection.jsx   # Multi-day schedule with track filters
-    │   ├── SpeakersSection.jsx   # Expandable speaker profile cards
-    │   ├── SponsorsSection.jsx   # 4-tier sponsorship pricing grid
-    │   ├── GallerySection.jsx    # Photo gallery with category tabs + lightbox
-    │   ├── ContactSection.jsx    # Contact form + social links + newsletter
-    │   ├── Footer.jsx            # Footer with quick links + newsletter
-    │   └── RegistrationModal.jsx # Multi-step registration form + ticket generation
-    │
-    ├── 📁 context/
-    │   └── AuthContext.jsx       # Firebase Auth provider (React Context API)
-    │
-    ├── 📁 data/
-    │   └── index.js              # All event, schedule, speaker & gallery data
-    │
-    ├── 📁 hooks/
-    │   ├── useCountUp.js         # Animated counter hook with cubic easing
-    │   ├── useInView.js          # IntersectionObserver hook for scroll reveals
-    │   └── useRegistration.js    # Custom hook — Firestore writes + localStorage fallback
-    │
-    └── 📁 lib/
-        ├── firebase.js           # Firebase app initialization
-        └── utils.js              # Utility functions (cn, formatCountdown)
-```
-
-<br />
+### Core Technologies
+- **UI Runtime**: [React 18.2](https://react.dev/)
+- **Build Engine**: [Vite 5.4](https://vitejs.dev/)
+- **Styling Architecture**: [Tailwind CSS 3.4](https://tailwindcss.com/) + PostCSS Autoprefixer
+- **Backend & Persistence**: [Firebase 10.7](https://firebase.google.com/) (Authentication + Cloud Firestore)
+- **Typography**: Space Grotesk (Headlines & Badges) + Inter (Body Copy) via Google Fonts
+- **Iconography**: [Lucide React](https://lucide.dev/) (Tree-shakeable SVG icons)
+- **Micro-Delight**: Canvas Confetti particle physics engine on successful registration
 
 ---
 
@@ -237,224 +156,188 @@ Web-a-thon/
 
 <div align="center">
 
-| Event | Category | Prize Pool | Team Size | Duration |
+| Event | Category | Date | Prize Pool | Team Format |
 |:---|:---:|:---:|:---:|:---:|
-| ⚡ **Hackathon** | Coding | ₹50,000 | 2–4 | 24 Hours |
-| 🗺️ **Treasure Hunt** | Adventure | ₹20,000 | 3–5 | 5 Hours |
-| 🎮 **E-Sports Arena** | Gaming | ₹40,000 | 1–5 | Full Day |
-| 🚩 **Capture The Flag** | Security | ₹25,000 | 1–3 | 6 Hours |
-| 🛠️ **Workshop Series** | Learning | Certificate | Individual | 2 Days |
-
-### 💰 Total Prize Pool: ₹1,75,000+
+| ⚡ **Hackathon** | Coding | Oct 24 | **₹50,000** | 2–4 Members |
+| 🗺️ **Treasure Hunt** | Adventure | Oct 24 | **₹20,000** | 3–5 Members |
+| 🚩 **Capture The Flag** | Security | Oct 25 | **₹25,000** | 1–3 Members |
+| 🎮 **E-Sports Arena** | Gaming | Oct 26 | **₹40,000** | Squad / Solo |
+| 🛠️ **Workshop Series** | Learning | Oct 24–25 | **Certificates + Mentorship** | Individual |
 
 </div>
 
-<br />
+---
+
+## 📅 Master Schedule Engine
+
+The festival timeline utilizes a collision-proof flex card architecture:
+- **Dedicated Time Badges**: Clear time labels (`09:00 IST`) isolated from interactive indicators.
+- **Track Status**: Color-coded category tags with animated `● Live Now` detection based on real-time clock calculation.
+- **Responsive Day Toggles**: Grid of Day selectors (`Day 1` to `Day 4`) scaling gracefully across mobile viewports.
+- **Sticky Header Clearance**: Built-in `scroll-mt-24` and `html { scroll-padding-top: 5.5rem; }` so section headers never hide under the navigation bar.
 
 ---
 
-## 🚀 Getting Started
+## 🏗️ Project Structure
+
+```
+webathon/
+├── 📄 index.html                 # HTML5 template with SEO, OpenGraph & Preload hints
+├── 📄 package.json               # Dependencies, scripts & repository metadata
+├── 📄 LICENSE                    # Official MIT License
+├── 📄 vite.config.js             # Vite config with manual chunk optimization
+├── 📄 tailwind.config.js         # Custom theme extensions, fonts, and colors
+├── 📄 postcss.config.js          # PostCSS processing pipeline
+├── 📄 firestore.rules            # Firestore database security rules
+├── 📄 firestore.indexes.json     # Firestore composite index definitions
+├── 📄 firebase.json              # Firebase CLI hosting rules
+├── 📄 .env.example               # Environment variables template
+│
+├── 📁 .github/
+│   └── workflows/
+│       └── deploy.yml            # Automated GitHub Pages CI/CD workflow
+│
+├── 📁 public/
+│   └── assets/
+│       ├── nirvan-banner.jpg     # Hero festival banner
+│       ├── gehu-logo.jpg         # Graphic Era Hill University logo
+│       ├── tech-geeks-logo.jpg   # Tech Geeks club logo
+│       └── gallery/              # Archive photography (photo1.jpg – photo5.jpg)
+│
+└── 📁 src/
+    ├── main.jsx                  # Application bootstrap
+    ├── App.jsx                   # Layout root assembler
+    ├── index.css                 # Global CSS design tokens & brutalist components
+    │
+    ├── 📁 components/
+    │   ├── Navbar.jsx            # Sticky navigation with reading depth progress bar
+    │   ├── HeroSection.jsx       # 2-column desktop / mobile stacked hero + countdown card
+    │   ├── AboutSection.jsx      # Scroll-triggered count-up statistics
+    │   ├── EventsSection.jsx     # Interactive 3D tilt cards, search & detail modals
+    │   ├── ScheduleSection.jsx   # Collision-free multi-day timeline engine
+    │   ├── SpeakersSection.jsx   # Keynote mentor directory with expandable abstracts
+    │   ├── SponsorsSection.jsx   # Partnership prospectus with continuous marquee ribbon
+    │   ├── GallerySection.jsx    # Photo archive with category tabs & keyboard lightbox
+    │   ├── ContactSection.jsx    # Contact details & campus coordinates
+    │   ├── Footer.jsx            # Quick navigation & legal credits
+    │   └── RegistrationModal.jsx # Multi-step registration flow + confetti celebration
+    │
+    ├── 📁 context/
+    │   └── AuthContext.jsx       # Firebase Google Auth provider & state
+    │
+    ├── 📁 hooks/
+    │   ├── useInView.js          # IntersectionObserver scroll reveal engine
+    │   ├── useCountUp.js         # Smooth cubic ease-out counter hook
+    │   └── useRegistration.js    # Resilient dual-write Firestore + LocalStorage hook
+    │
+    ├── 📁 data/
+    │   └── index.js              # Centralized events, speakers, schedule & gallery data
+    │
+    └── 📁 lib/
+        ├── firebase.js           # Firebase SDK initialization with fallbacks
+        └── utils.js              # Class merger utility (`cn`) and countdown math
+```
+
+---
+
+## 🚀 Quickstart & Setup
 
 ### Prerequisites
+- **Node.js**: `v18.x` or higher
+- **npm**: `v9.x` or higher
+- **Git**: Latest version
 
-| Tool | Version | Download |
-|:---|:---|:---|
-| **Node.js** | ≥ 18.x | [nodejs.org](https://nodejs.org) |
-| **npm** | ≥ 9.x | Comes with Node.js |
-| **Git** | Latest | [git-scm.com](https://git-scm.com) |
-
-### Installation
+### Local Development
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/sanidhyanegi07/webathon.git
+git clone https://github.com/Sanidhyanegi07/webathon.git
 
-# 2. Navigate to the project
+# 2. Navigate to project root
 cd webathon
 
 # 3. Install dependencies
 npm install
 
-# 4. Start the development server
+# 4. Start local development server
 npm run dev
 ```
 
-The app will be live at **`http://localhost:3000`** ⚡
+The application will be accessible at: **`http://localhost:3000`** ⚡
 
-### Build for Production
+### Production Build
 
 ```bash
-# Create optimized production build
+# Compile and minify for production
 npm run build
 
-# Preview the production build locally
+# Preview production build locally
 npm run preview
 ```
 
-<br />
+---
+
+## 🔥 Firebase Configuration
+
+To link your own Firebase project for authentication and Firestore registration storage:
+
+1. Duplicate `.env.example` as `.env.local`:
+   ```bash
+   cp .env.example .env.local
+   ```
+2. Populate `.env.local` with your Firebase Console credentials:
+   ```env
+   VITE_FIREBASE_API_KEY=AIzaSy...
+   VITE_FIREBASE_AUTH_DOMAIN=your-app.firebaseapp.com
+   VITE_FIREBASE_PROJECT_ID=your-app
+   VITE_FIREBASE_STORAGE_BUCKET=your-app.firebasestorage.app
+   VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
+   VITE_FIREBASE_APP_ID=1:123456:web:...
+   VITE_FIREBASE_MEASUREMENT_ID=G-...
+   ```
+
+> [!NOTE]
+> The app is architected with a local persistence mirror. Even without Firebase keys configured, registrations will seamlessly save to browser `localStorage` and generate valid ticket cards!
 
 ---
 
-## 🔥 Firebase Setup (Optional)
+## 🚢 Automated CI/CD Deployment
 
-To enable user authentication and event registrations, create a `.env.local` file in the root directory:
+### Vercel (Current Production Host)
+Every commit pushed to the `main` branch automatically triggers a production deployment on Vercel:
+👉 **[https://webathon-nirvan.vercel.app/](https://webathon-nirvan.vercel.app/)**
 
-```env
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-```
-
-> **💡 Note:** The website works perfectly without Firebase — registration features gracefully fall back to `localStorage`, so you can explore the full UI without any backend setup.
-
-<br />
+### GitHub Pages (Configured Workflow)
+This repository includes a pre-configured GitHub Actions workflow in `.github/workflows/deploy.yml`:
+- Runs automated dependency install and `vite build`.
+- Generates `404.html` SPA routing fallbacks.
+- Deploys static build artifacts to GitHub Pages on every release push.
 
 ---
 
-## 🚢 Deployment
-
-### GitHub Pages (Automated — Recommended)
-
-This repo includes a pre-configured GitHub Actions workflow:
-
-| File | Trigger | What It Does |
-|:---|:---|:---|
-| [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) | Push to `main` / `master` | Installs deps → Builds → Copies `404.html` for SPA routing → Deploys to GitHub Pages |
-
-**Steps:**
-1. Enable GitHub Pages in your repo settings (source: GitHub Actions)
-2. Push to `main` or `master` branch
-3. GitHub Actions automatically builds and deploys ✅
-
-### Manual Deployment (Any Static Host)
-
-```bash
-npm run build
-# Upload the `dist/` folder to Netlify, Vercel, Cloudflare Pages, or any static host
-```
-
-<br />
-
----
-
-## 🤝 Sponsorship & Partnership
-
-NIRVAN '26 offers structured sponsorship tiers designed for maximum brand visibility:
-
-| Tier | Investment | Key Benefits |
-|:---|:---:|:---|
-| 🟢 **Startup** | ₹20,000 | Logo placement, 2 passes, resume access, virtual swag bag insert |
-| 🔵 **Growth** | ₹50,000 | Prominent logo, dedicated booth, 4 passes, social media features |
-| 🟣 **Enterprise** | ₹1,00,000 | Merchandise branding, speaking slot, premium booth, custom challenge creation |
-| 🟡 **Presenting Partner** | ₹2,50,000+ | **"Presented by"** title branding, keynote stage time (20 min), judge panel, VIP access, exclusive branding rights |
-
-> **Interested in partnering?** Reach out via the [Contact section](https://webathon-nirvan.vercel.app#contact) on the website or email the organizing team directly.
-
-<br />
-
----
-
-## 🎙️ Featured Speakers
-
-| Speaker | Role | Organization |
-|:---|:---|:---|
-| **Prof. Rajiv Sharma** | Dean of Engineering | Graphic Era Hill University |
-| **Ananya Mehta** | Senior Software Engineer | Google India |
-| **Karan Vohra** | Cybersecurity Researcher | DRDO / IIT Delhi (Alum) |
-| **Priya Nair** | Product Designer | Figma (Bangalore) |
-
-<br />
-
----
-
-## 📅 Event Schedule
-
-| Day | Date | Highlights |
-|:---|:---|:---|
-| **Day 1** | Oct 24, 2026 | Opening Ceremony, Hackathon Kick-off, Treasure Hunt, AI/ML Workshop |
-| **Day 2** | Oct 25, 2026 | CTF Competition, Full-Stack Workshop, Hackathon Presentations |
-| **Day 3** | Oct 26, 2026 | E-Sports Tournament (Valorant, BGMI, FIFA), Grand Finals |
-| **Day 4** | Oct 27, 2026 | Speaker Sessions, Closing Ceremony & Prize Distribution |
-
-<br />
-
----
-
-## 🧑‍💻 Contributing
-
-We welcome contributions! Here's how you can help:
-
-```bash
-# 1. Fork the repository
-# 2. Create a feature branch
-git checkout -b feature/amazing-feature
-
-# 3. Commit your changes (use conventional commits)
-git commit -m "feat: add amazing feature"
-
-# 4. Push to the branch
-git push origin feature/amazing-feature
-
-# 5. Open a Pull Request
-```
-
-### Contribution Guidelines
-
-| Rule | Details |
-|:---|:---|
-| 🎨 **Design System** | Follow the existing brutalist design — no rounded corners, no soft shadows |
-| 🔤 **Typography** | Use **Space Grotesk** for headlines, **Inter** for body text |
-| 🧩 **Components** | New components should use `@layer components` in `index.css` |
-| 🎨 **Colors** | Stick to the palette defined in `tailwind.config.js` |
-| 📝 **Commits** | Use [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `docs:`) |
-
-<br />
-
----
-
-## 👥 Built With ❤️ By
+## 👥 Core Team & Contributors
 
 <div align="center">
 
-| Contributor | Role |
-|:---:|:---:|
-| **[Sanidhya](https://github.com/sanidhyanegi07)** | 🚀 Lead Developer |
-| **Karan** | 💻 Developer |
-| **Rudraksh** | 💻 Developer |
-| **Shobhit** | 💻 Developer |
+| Contributor | Role | Affiliation |
+|:---|:---|:---|
+| **[Sanidhya Negi](https://github.com/Sanidhyanegi07)** | 🚀 Lead Developer & Architect | Graphic Era Hill University |
+| **Karan** | 💻 Frontend Engineering | Graphic Era Hill University |
+| **Rudraksh** | 💻 UI / Component Design | Graphic Era Hill University |
+| **Shobhit** | 💻 Content & QA | Graphic Era Hill University |
 
-*Students of Graphic Era Hill University, Bhimtal*
+*Proudly crafted by the students of Graphic Era Hill University, Bhimtal for the Web-a-thon Hackathon.*
 
 </div>
-
-<br />
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
-<br />
-
----
+This project is licensed under the open-source **MIT License** — see the [LICENSE](LICENSE) file for complete details.
 
 <div align="center">
 
-### ⭐ If you found this useful, give it a star!
-
-**Built for the Web-a-thon hackathon** 🏆
-
-*Crafted with React, Vite, Tailwind CSS, Firebase, and a lot of ☕*
-
-<br />
-
-[![Stars](https://img.shields.io/github/stars/sanidhyanegi07/webathon?style=social)](https://github.com/sanidhyanegi07/webathon/stargazers)
-[![Forks](https://img.shields.io/github/forks/sanidhyanegi07/webathon?style=social)](https://github.com/sanidhyanegi07/webathon/network/members)
-[![Issues](https://img.shields.io/github/issues/sanidhyanegi07/webathon?style=social)](https://github.com/sanidhyanegi07/webathon/issues)
+### ⭐ Star this repository if you found it inspiring!
 
 </div>
-
