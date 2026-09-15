@@ -13,23 +13,24 @@ export function useRegistration() {
   const [error, setError] = useState(null);
   const [ticketId, setTicketId] = useState(null);
 
-  const checkDuplicate = async (eventId, currentUser) => {
-    if (!currentUser || !WOW_ENABLED) {
+  const checkDuplicate = async (eventId, email) => {
+    if (!WOW_ENABLED) {
       // Fallback: check localStorage
       const saved = JSON.parse(localStorage.getItem('nirvan26_regs') || '[]');
-      return saved.some(r => r.eventId === eventId);
+      return saved.some(r => r.eventId === eventId && r.email === email);
     }
     try {
       const q = query(
         collection(db, 'registrations'),
-        where('userId', '==', currentUser.uid),
+        where('email', '==', email),
         where('eventId', '==', eventId)
       );
       const snap = await getDocs(q);
       return !snap.empty;
     } catch {
-      // If check fails, don't block submission
-      return false;
+      // If Firestore check fails, fall back to localStorage check
+      const saved = JSON.parse(localStorage.getItem('nirvan26_regs') || '[]');
+      return saved.some(r => r.eventId === eventId && r.email === email);
     }
   };
 
@@ -38,7 +39,7 @@ export function useRegistration() {
     setError(null);
 
     try {
-      const isDuplicate = await checkDuplicate(eventId, user);
+      const isDuplicate = await checkDuplicate(eventId, formData.email);
       if (isDuplicate) {
         throw new Error('You have already registered for this event!');
       }
@@ -56,20 +57,16 @@ export function useRegistration() {
         status: 'confirmed',
       };
 
-      if (WOW_ENABLED && user) {
-        try {
-          await addDoc(collection(db, 'registrations'), {
-            ...regData,
-            createdAt: serverTimestamp(),
-          });
-        } catch (fbErr) {
-          console.warn('Firebase write failed, saving locally:', fbErr.code);
-          // fallback to localStorage
-          const saved = JSON.parse(localStorage.getItem('nirvan26_regs') || '[]');
-          localStorage.setItem('nirvan26_regs', JSON.stringify([...saved, regData]));
-        }
+      if (WOW_ENABLED) {
+        console.log('[Firebase] Attempting write to registrations...', regData);
+        const docRef = await addDoc(collection(db, 'registrations'), {
+          ...regData,
+          userId: user?.uid || 'anonymous',
+          createdAt: serverTimestamp(),
+        });
+        console.log('[Firebase] ✅ Write SUCCESS — doc ID:', docRef.id);
       } else {
-        // Core track: localStorage only
+        // WOW_ENABLED=false: localStorage only
         const saved = JSON.parse(localStorage.getItem('nirvan26_regs') || '[]');
         localStorage.setItem('nirvan26_regs', JSON.stringify([...saved, regData]));
       }
