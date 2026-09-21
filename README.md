@@ -15,7 +15,7 @@
 [![Firebase](https://img.shields.io/badge/Firebase-10.7-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
 [![MIT License](https://img.shields.io/badge/License-MIT-10B981?style=for-the-badge)](LICENSE)
 
-[🌐 Live Demo](https://webathon-nirvan.vercel.app/) · [🐛 Report an Issue](https://github.com/Sanidhyanegi07/webathon/issues) · [✨ Request a Feature](https://github.com/Sanidhyanegi07/webathon/issues/new)
+[🌐 **Explore Live Demo**](https://webathon-nirvan.vercel.app) · [📋 **Report Issue**](https://github.com/Sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/Sanidhyanegi07/webathon/issues) · [🤝 **Sponsorship**](mailto:sanidhyanegi050107@://gmail.com)
 
 </div>
 
