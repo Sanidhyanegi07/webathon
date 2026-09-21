@@ -5,8 +5,8 @@
 <br />
 <br />
 
- ⚡ NIRVAN '26 — Annual Technical Festival
-## * Uttarakhand's Premier Engineering, Cyber & E-Sports Showdown *
+⚡ NIRVAN '26 — Annual Technical Festival
+* Uttarakhand's Premier Engineering, Cyber & E-Sports Showdown *
 
 [![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
