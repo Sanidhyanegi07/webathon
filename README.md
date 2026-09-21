@@ -2,114 +2,69 @@
 
 # ⚡ NIRVAN '26
 
-### Annual Technical Festival
+### **Build. Break. Become.**
 
-<img src="public/assets/nirvan-banner.jpg" alt="NIRVAN '26 — Annual Technical Festival" width="100%" />
+<a href="https://webathon-nirvan.vercel.app/"><img src="public/assets/nirvan-banner.svg" alt="NIRVAN '26 — Annual Technical Festival" width="100%" /></a>
 
-<br />
+### Uttarakhand's premier engineering, cybersecurity & e-sports showdown
 
-**Uttarakhand's Premier Engineering, Cybersecurity & E-Sports Showdown**
-
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-webathon--nirvan.vercel.app-0055FF?style=for-the-badge)](https://webathon-nirvan.vercel.app/)
 [![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Firebase](https://img.shields.io/badge/Firebase-10.7-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
-[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://webathon-nirvan.vercel.app/)
 [![MIT License](https://img.shields.io/badge/License-MIT-10B981?style=for-the-badge)](LICENSE)
 
-[🌐 **Live Demo**](https://webathon-nirvan.vercel.app/) · [🐛 **Report an Issue**](https://github.com/Sanidhyanegi07/webathon/issues) · [✨ **Request a Feature**](https://github.com/Sanidhyanegi07/webathon/issues/new)
+[🌐 Live Demo](https://webathon-nirvan.vercel.app/) · [🐛 Report an Issue](https://github.com/Sanidhyanegi07/webathon/issues) · [✨ Request a Feature](https://github.com/Sanidhyanegi07/webathon/issues/new)
 
 </div>
 
 ---
 
-## 📑 Contents
+## ✨ What is NIRVAN?
 
-- [🎯 About NIRVAN '26](#-about-nirvan-26)
-- [✨ Highlights](#-highlights)
-- [🎨 Design System](#-design-system)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [🎪 Flagship Events](#-flagship-events)
-- [📅 Schedule Experience](#-schedule-experience)
-- [🏗️ Project Structure](#️-project-structure)
-- [🚀 Getting Started](#-getting-started)
-- [🔥 Firebase Configuration](#-firebase-configuration)
-- [🚢 Deployment](#-deployment)
-- [🤝 Contributing](#-contributing)
-- [👥 Team](#-team)
-- [📄 License](#-license)
+**NIRVAN '26** is the official digital home of the annual technical festival organised by [Graphic Era Hill University](https://www.gehu.ac.in/), Haldwani, in partnership with Tech Geeks.
 
----
+It is more than an event website: it is a fast, responsive festival experience where participants can discover competitions, explore the schedule, meet speakers, learn about partners, and register their teams from one polished single-page application.
 
-## 🎯 About NIRVAN '26
-
-**NIRVAN '26** is the official web platform for the annual technical festival organised by [Graphic Era Hill University](https://www.gehu.ac.in/), Haldwani, in partnership with Tech Geeks.
-
-The platform brings event discovery, schedules, speakers, sponsors, registration, and festival updates together in one fast, responsive single-page application. Its visual identity follows a bold **neo-brutalist / Bauhaus design language** with strong borders, hard shadows, high-contrast colors, and purposeful motion.
+> **One arena. Four days. Infinite ways to create.**
 
 ### At a glance
 
-- 🎯 **4-day** inter-college technology festival
-- 👥 **500+** developers, ethical hackers, designers, and gamers
-- 🏆 **₹1,75,000+** in combined prize money
-- 📱 Responsive experience for mobile, tablet, and desktop
-- 🔐 Google authentication with Firestore registration support
-- 💾 Local-storage fallback when Firebase is unavailable
-
-## ✨ Highlights
-
-| Feature | Description |
+| | Festival snapshot |
 | --- | --- |
-| **Interactive event discovery** | Search and filter competitions by category, format, and event details. |
-| **Guided registration** | Multi-step team registration with ticket generation and success feedback. |
-| **Master schedule** | Multi-day timeline with track filters and automatic live-session detection. |
-| **Immersive interactions** | 3D tilt cards, scroll reveals, count-up statistics, marquees, and confetti feedback. |
-| **Partner showcase** | Sponsor tiers and partnership information presented through an interactive prospectus. |
-| **Responsive by design** | Carefully structured layouts that remain usable from 360px mobile screens to large desktops. |
+| 🎯 | **4-day** inter-college technology festival |
+| 👥 | **500+** developers, ethical hackers, designers and gamers |
+| 🏆 | **₹1,75,000+** in combined prize money |
+| 📱 | Responsive from **360px mobile** screens to desktop |
+| 🔐 | Google authentication with Firestore registration |
+| 💾 | Local-storage fallback when Firebase is unavailable |
 
-## 🎨 Design System
+## 🚀 Highlights
 
-NIRVAN uses a functional neo-brutalist design system focused on clarity, contrast, and tactile interactions.
+- **Find your challenge:** Search and filter events by category, format and details.
+- **Register with confidence:** A guided multi-step team flow generates a registration ticket.
+- **Never miss a session:** Browse the four-day master schedule with track filters and live status.
+- **Feel every interaction:** 3D tilt cards, scroll reveals, count-up stats, marquees and confetti.
+- **Meet the ecosystem:** Explore speakers, sponsors and partnership opportunities.
+- **Designed for everyone:** Clear responsive layouts, strong contrast and keyboard-friendly patterns.
 
-| Color | Hex | Usage |
+## 🎨 Design language
+
+NIRVAN uses a functional neo-brutalist visual system: bold type, honest borders, hard shadows and high-contrast color blocks. Shared utilities such as `.brutal-btn`, `.card-brutal` and `.section-label` live in `src/index.css`.
+
+| Color | Hex | Purpose |
 | --- | --- | --- |
-| 🟡 Bauhaus Yellow | `#FFCC00` | Primary accent, highlights, and calls to action |
-| ⬛ Ink Black | `#1A1A1A` | Borders, typography, and hard shadows |
-| 🟤 Cream Neutral | `#F5F0E8` | Main page background |
-| ⬜ Pure White | `#FFFFFF` | Cards and elevated surfaces |
-| 🔴 Alert Red | `#E63B2E` | Security track accents and error states |
-| 🔵 Electric Blue | `#0055FF` | Coding track accents and links |
-| 🟢 Emerald Green | `#10B981` | Gaming track accents and live indicators |
+| 🟡 Bauhaus Yellow | `#FFCC00` | Primary accent and calls to action |
+| ⬛ Ink Black | `#1A1A1A` | Typography, borders and shadows |
+| 🟤 Cream Neutral | `#F5F0E8` | Page background |
+| 🔴 Alert Red | `#E63B2E` | Security accents and errors |
+| 🔵 Electric Blue | `#0055FF` | Coding accents and links |
+| 🟢 Emerald Green | `#10B981` | Gaming accents and live indicators |
 
-Shared visual utilities such as `.brutal-btn`, `.card-brutal`, and `.section-label` are defined in `src/index.css`.
+## 🏆 Flagship events
 
-## 🛠️ Tech Stack
-
-- **UI runtime:** [React 18.2](https://react.dev/)
-- **Build tool:** [Vite 5.4](https://vitejs.dev/)
-- **Styling:** [Tailwind CSS 3.4](https://tailwindcss.com/), PostCSS, and Autoprefixer
-- **Authentication and data:** [Firebase Authentication](https://firebase.google.com/docs/auth) and Cloud Firestore
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Typography:** Space Grotesk for headings and Inter for body text
-- **Micro-interactions:** Canvas Confetti and custom React hooks
-- **Deployment:** Vercel, with a GitHub Pages workflow included
-
-### Architecture overview
-
-```text
-Browser
-  └── React single-page application
-      ├── Presentation: sections, cards, modals, and responsive layouts
-      ├── Interaction: search, filters, animations, and schedule controls
-      ├── Custom hooks: viewport reveals, count-up stats, and registration
-      └── Services
-          ├── Firebase Auth + Firestore
-          └── localStorage fallback + ticket cache
-```
-
-## 🎪 Flagship Events
-
-| Event | Category | Date | Prize Pool | Team Format |
+| Event | Track | Date | Prize pool | Team format |
 | --- | :---: | :---: | ---: | --- |
 | ⚡ **Hackathon** | Coding | Oct 24 | **₹50,000** | 2–4 members |
 | 🗺️ **Treasure Hunt** | Adventure | Oct 24 | **₹20,000** | 3–5 members |
@@ -117,31 +72,41 @@ Browser
 | 🎮 **E-Sports Arena** | Gaming | Oct 26 | **₹40,000** | Squad / solo |
 | 🛠️ **Workshop Series** | Learning | Oct 24–25 | Certificates + mentorship | Individual |
 
-> Event information is maintained centrally in `src/data/index.js`, allowing content updates without changing presentation components.
+Event content is maintained centrally in `src/data/index.js`, so organisers can update festival information without changing presentation components.
 
-## 📅 Schedule Experience
+## 🧱 Built with
 
-The schedule is designed for quick scanning across all four days:
+- **Runtime:** React 18.2
+- **Build:** Vite 5.4
+- **Styling:** Tailwind CSS 3.4, PostCSS and Autoprefixer
+- **Data & auth:** Firebase Authentication and Cloud Firestore
+- **Icons:** Lucide React
+- **Typography:** Space Grotesk + Inter
+- **Motion:** Canvas Confetti and custom React hooks
+- **Deployment:** Vercel, with a GitHub Pages workflow included
 
-- Clear time badges with IST labels
-- Category-specific track colors
-- Automatic `Live Now` status based on the current time
-- Responsive day selectors for smaller screens
-- Scroll padding that keeps section headings visible below the sticky navbar
+```text
+Browser
+  └── React single-page application
+      ├── UI: sections, cards, modals and responsive layouts
+      ├── Interaction: search, filters, animation and schedule controls
+      ├── Hooks: viewport reveals, count-up stats and registration
+      └── Services: Firebase Auth + Firestore → localStorage fallback
+```
 
-## 🏗️ Project Structure
+## 📁 Project structure
 
 ```text
 webathon/
-├── public/assets/           # Banner, logos, and gallery images
+├── public/assets/           # Banner, logos and gallery images
 ├── src/
-│   ├── components/          # Navbar, sections, cards, modals, and footer
+│   ├── components/          # Navbar, sections, cards, modals and footer
 │   ├── context/             # Firebase authentication context
-│   ├── data/                # Events, speakers, schedule, and gallery content
-│   ├── hooks/               # useInView, useCountUp, and useRegistration
+│   ├── data/                # Events, speakers, schedule and gallery content
+│   ├── hooks/               # useInView, useCountUp and useRegistration
 │   └── lib/                 # Firebase setup and shared utilities
 ├── .github/workflows/       # Deployment workflow
-├── .env.example             # Firebase environment variable template
+├── .env.example             # Firebase environment template
 ├── firebase.json            # Firebase hosting configuration
 ├── firestore.rules          # Firestore security rules
 ├── index.html               # SEO and Open Graph metadata
@@ -149,12 +114,12 @@ webathon/
 └── vite.config.js           # Vite configuration
 ```
 
-## 🚀 Getting Started
+## 🛠️ Run locally
 
 ### Prerequisites
 
-- Node.js **18 or later**
-- npm **9 or later**
+- Node.js **18+**
+- npm **9+**
 - Git
 
 ### Installation
@@ -166,29 +131,22 @@ npm install
 npm run dev
 ```
 
-Open the local URL shown by Vite—usually [`http://localhost:5173`](http://localhost:5173).
+Open the local URL shown by Vite, usually [`http://localhost:5173`](http://localhost:5173).
 
-### Available scripts
+### Commands
 
 ```bash
 npm run dev       # Start the development server
-npm run build     # Create an optimized production build
+npm run build     # Create an optimised production build
 npm run preview   # Preview the production build locally
 ```
 
-## 🔥 Firebase Configuration
+## 🔥 Firebase setup (optional)
 
-Firebase is optional for running the interface locally. Without credentials, registrations use the browser's local-storage fallback.
+The interface works without Firebase; registrations fall back to browser `localStorage`. To enable Google sign-in and Firestore persistence:
 
-To enable Google authentication and Firestore persistence:
-
-1. Copy the example environment file:
-
-   ```bash
-   cp .env.example .env.local
-   ```
-
-2. Add your Firebase web-app configuration:
+1. Copy the template: `cp .env.example .env.local`
+2. Add the Firebase web-app values:
 
    ```env
    VITE_FIREBASE_API_KEY=your_api_key
@@ -200,31 +158,31 @@ To enable Google authentication and Firestore persistence:
    VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
    ```
 
-3. In Firebase Console, enable Google sign-in, create the required Firestore database, and add local and deployed domains to the authorised domains list.
+3. Enable Google sign-in, create Firestore, and add local/deployed domains to Firebase's authorised domains.
 
-> **Security note:** Vite variables are exposed to the browser. Never add private keys, service-account credentials, or other server secrets to `.env.local`. Use Firestore security rules to protect registration data.
+> **Security:** `VITE_*` values are exposed in the browser. Never commit private keys or service-account credentials. Protect data with Firestore security rules.
 
 ## 🚢 Deployment
 
 ### Vercel
 
-The production site is available at [webathon-nirvan.vercel.app](https://webathon-nirvan.vercel.app/). Connect the repository to Vercel and configure the Firebase `VITE_*` variables in the project settings when cloud features are enabled.
+The production site is available at [webathon-nirvan.vercel.app](https://webathon-nirvan.vercel.app/). Import the repository into Vercel and configure the Firebase `VITE_*` variables in the project settings.
 
 ### GitHub Pages
 
-The repository includes `.github/workflows/deploy.yml`, which builds the Vite application and deploys the static output to GitHub Pages. If deploying under a project subpath, verify the Vite `base` configuration before publishing.
+The repository includes `.github/workflows/deploy.yml` for building and deploying the static output. When deploying under a project subpath, verify the Vite `base` configuration.
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and bug reports are welcome.
+Ideas, improvements, bug reports and design feedback are welcome.
 
 1. Fork the repository.
 2. Create a branch: `git checkout -b feat/your-change`.
-3. Make and test your changes with `npm run build`.
-4. Commit your work: `git commit -m "feat: describe your change"`.
-5. Push the branch and open a pull request.
+3. Make your changes and run `npm run build`.
+4. Commit clearly: `git commit -m "feat: describe your change"`.
+5. Push your branch and open a pull request.
 
-For larger changes, open an issue first so the approach can be discussed.
+For substantial changes, open an issue first so the approach can be discussed.
 
 ## 👥 Team
 
@@ -239,10 +197,10 @@ For larger changes, open an issue first so the approach can be discussed.
 
 **Made with ⚡ by the students of Graphic Era Hill University for the Web-a-thon Hackathon.**
 
-## 📄 License
+[⬆ Back to top](#-nirvan-26) · [⭐ Star this project](https://github.com/Sanidhyanegi07/webathon)
 
-This project is released under the [MIT License](LICENSE).
+### 📄 License
 
-⭐ If you found the project useful or inspiring, consider giving it a star.
+Released under the [MIT License](LICENSE).
 
 </div>
