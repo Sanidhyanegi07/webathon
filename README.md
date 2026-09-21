@@ -121,23 +121,23 @@ NIRVAN '26 rejects cookie-cutter corporate templates in favor of a raw, geometri
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        NIRVAN '26 ARCHITECTURE                         │
+│                        NIRVAN '26 ARCHITECTURE                         
 ├────────────────────────────────────────────────────────────────────────┤
-│                                                                        │
-│   [ Client Browser ]                                                   │
-│           │                                                            │
-│           ├── Single Page App (React 18 + Vite 5 Bundler)              │
-│           │      ├── Presentation Layer (Tailwind CSS 3.4 + Space Gro) │
-│           │      ├── Custom Hooks (useInView, useCountUp, useReg)      │
-│           │      └── Component Tree (Hero, Schedule, Events, Modals)   │
-│           │                                                            │
-│           ├── Local State (LocalStorage Mirror & Ticket Cache)         │
-│           │                                                            │
-│           └── Cloud Services                                           │
-│                  ├── Google Firebase Auth (OAuth 2.0 Sign-In)          │
-│                  ├── Cloud Firestore (Encrypted Registration Store)    │
-│                  └── Vercel / GitHub Pages (Global Edge Distribution)  │
-│                                                                        │
+│                                                                        
+│   [ Client Browser ]                                                   
+│           │                                                            
+│           ├── Single Page App (React 18 + Vite 5 Bundler)              
+│           │      ├── Presentation Layer (Tailwind CSS 3.4 + Space Gro) 
+│           │      ├── Custom Hooks (useInView, useCountUp, useReg)      
+│           │      └── Component Tree (Hero, Schedule, Events, Modals)   
+│           │                                                            
+│           ├── Local State (LocalStorage Mirror & Ticket Cache)         
+│           │                                                            
+│           └── Cloud Services                                           
+│                  ├── Google Firebase Auth (OAuth 2.0 Sign-In)          
+│                  ├── Cloud Firestore (Encrypted Registration Store)    
+│                  └── Vercel / GitHub Pages (Global Edge Distribution)  
+│                                                                        
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
