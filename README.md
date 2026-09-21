@@ -17,7 +17,7 @@
 
 <br />
 
-**The official web platform for NIRVAN '26 — the flagship annual technical festival organized by [Graphic Era Hill University](https://www.gehu.ac.in/), Bhimtal in partnership with the Tech Geeks Club.**
+**The official web platform for NIRVAN '26 — the flagship annual technical festival organized by [Graphic Era Hill University](https://www.gehu.ac.in/), Haldwani in partnership with the Tech Geeks Club.**
 
 Built with a bold, functionalist **Brutalist / Bauhaus design language**, responsive cross-device layouts, custom React hook architectures, 3D physics-based card tilts, and zero-latency cloud registrations.
 
