@@ -23,12 +23,12 @@ Built with a bold, functionalist **Brutalist / Bauhaus design language**, respon
 
 <br />
 
-[🌐 **Explore Live Demo**](https://webathon-nirvan.vercel.app) · [📋 **Report Issue**](https://github.com/Sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/Sanidhyanegi07/webathon/issues) · [🤝 **Sponsorship Deck**](#-sponsorship--partnership)
+[🌐 **Explore Live Demo**](https://webathon-nirvan.vercel.app) · [📋 **Report Issue**](https://github.com/Sanidhyanegi07/webathon/issues) · [✨ **Request Feature**](https://github.com/Sanidhyanegi07/webathon/issues) · [🤝 **Sponsorship**]([Send me an email](https://google.com)
+ )
 
 ---
 
 </div>
-
 <br />
 
 ## 📑 Table of Contents
